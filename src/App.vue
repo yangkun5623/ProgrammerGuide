@@ -12,7 +12,7 @@ const theme = ref({
 })
 const locale = ref(zhCN);
 
-const getPopupContainer = (el, dialogContext) => {
+const getPopupContainer = (el: any, dialogContext: any) => {
   if (dialogContext) {
     return dialogContext.getDialogWrap();
   } else {
