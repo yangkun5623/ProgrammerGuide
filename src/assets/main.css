@@ -2,6 +2,7 @@
 
 #app {
   padding: 0;
+  height: 100%;
   font-weight: normal;
 }
 
@@ -20,8 +21,10 @@ a,
 
 @media (min-width: 1024px) {
   body {
+    height: 100%;
   }
 
   #app {
+    height: 100%;
   }
 }

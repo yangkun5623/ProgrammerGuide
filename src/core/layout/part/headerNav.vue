@@ -1,69 +1,30 @@
 <script lang="ts" setup>
 import { h, ref } from 'vue';
-import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons-vue';
-import { MenuProps } from 'ant-design-vue';
-const current = ref<string[]>(['mail']);
-const items = ref<MenuProps['items']>([
-  {
-    key: 'mail',
-    icon: () => h(MailOutlined),
-    label: 'Navigation One',
-    title: 'Navigation One',
-  },
-  {
-    key: 'app',
-    icon: () => h(AppstoreOutlined),
-    label: 'Navigation Two',
-    title: 'Navigation Two',
-  },
-  {
-    key: 'sub1',
-    icon: () => h(SettingOutlined),
-    label: 'Navigation Three - Submenu',
-    title: 'Navigation Three - Submenu',
-    children: [
-      {
-        type: 'group',
-        label: 'Item 1',
-        children: [
-          {
-            label: 'Option 1',
-            key: 'setting:1',
-          },
-          {
-            label: 'Option 2',
-            key: 'setting:2',
-          },
-        ],
-      },
-      {
-        type: 'group',
-        label: 'Item 2',
-        children: [
-          {
-            label: 'Option 3',
-            key: 'setting:3',
-          },
-          {
-            label: 'Option 4',
-            key: 'setting:4',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    key: 'alipay',
-    label: h('a', { href: 'https://antdv.com', target: '_blank' }, 'Navigation Four - Link'),
-    title: 'Navigation Four - Link',
-  },
-]);
+const selectedKeys1 = ref<string[]>(['1']);
 </script>
 
 <template>
-  <a-menu v-model:selectedKeys="current" mode="horizontal" :items="items" />
+  <div class="logo" >
+    <img src="@/core/common/img/logo.jpg" height="54">
+  </div>
+  <a-menu
+      v-model:selectedKeys="selectedKeys1"
+      theme="dark"
+      mode="horizontal"
+      :style="{ lineHeight: '64px' }"
+  >
+    <a-menu-item key="1">GPT</a-menu-item>
+  </a-menu>
 </template>
 
-<style scoped>
+<style scoped lang="less">
+.logo {
+  float: left;
+  width: 64px;
+  padding-top: 5px;
 
+  img{
+    vertical-align: top;
+  }
+}
 </style>
