@@ -6,7 +6,7 @@ const headerCss = {
   zIndex: 1,
   padding: '0 20px',
   width: '100%',
-  backgroundColor: 'linear-gradient(135deg,#65799b,#5e2563)'
+  backgroundColor: 'white'
 }
 const contentStyle = {
   padding: '18px 16px 0 16px',
@@ -23,7 +23,7 @@ const contentStyle = {
     </a-layout-header>
     <a-layout-content :style="contentStyle">
       <RouterView/>
-<!--      <footer-bar/>-->
+      <footer-bar/>
     </a-layout-content>
   </a-layout>
 </template>

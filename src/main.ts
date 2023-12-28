@@ -8,7 +8,7 @@ const app = createApp(App)
 
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/reset.css';
-import router from './route'
+import router from './core/route'
 
 
 app.use(Antd)

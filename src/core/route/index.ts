@@ -1,9 +1,9 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Layout from '../core/layout/layout.vue'
-import Login from '../core/login/login.vue'
+import {createMemoryHistory, createRouter, createWebHistory} from 'vue-router'
+import Layout from '../layout/layout.vue'
+import Login from '../login/login.vue'
 import routes from '@/work/routes'
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createMemoryHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/layout',

@@ -1,6 +1,6 @@
 <script lang="ts" setup >
 import {ref} from "vue";
-import router from "@/route/index";
+import router from "@/core/route/index";
 
 const value = ref('')
 const onSearch = () => {
