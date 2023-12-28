@@ -14,6 +14,9 @@ const contentStyle = {
   marginTop: '60px',
   overflowY: 'auto'
 };
+const backTopElm = () => {
+  return document.querySelector('#content')
+}
 </script>
 
 <template>
@@ -21,10 +24,13 @@ const contentStyle = {
     <a-layout-header :style="headerCss" class="header">
       <header-nav/>
     </a-layout-header>
-    <a-layout-content :style="contentStyle">
+    <a-layout-content :style="contentStyle" id="content">
       <RouterView/>
       <footer-bar/>
     </a-layout-content>
+    <a-float-button-group shape="circle">
+      <a-back-top :visibility-height="200" :target="backTopElm"/>
+    </a-float-button-group>
   </a-layout>
 </template>
 
