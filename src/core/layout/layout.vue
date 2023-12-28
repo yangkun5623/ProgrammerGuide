@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import HeaderNav from "@/core/layout/part/headerNav.vue";
 import FooterBar from "@/core/layout/part/footer.vue";
+import HeaderNav from "@/core/layout/part/headerNav.vue";
 const headerCss = {
   position: 'fixed',
   zIndex: 1,
@@ -9,7 +9,7 @@ const headerCss = {
   backgroundColor: 'white'
 }
 const contentStyle = {
-  padding: '18px 16px 0 16px',
+  padding: '18px 16px',
   height: 'auto',
   marginTop: '60px',
   overflowY: 'auto'
@@ -26,7 +26,7 @@ const backTopElm = () => {
     </a-layout-header>
     <a-layout-content :style="contentStyle" id="content">
       <RouterView/>
-      <footer-bar/>
+<!--      <footer-bar/>-->
     </a-layout-content>
     <a-float-button-group shape="circle">
       <a-back-top :visibility-height="200" :target="backTopElm"/>

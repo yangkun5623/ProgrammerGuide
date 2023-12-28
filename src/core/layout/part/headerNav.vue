@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import {useRouter} from "vue-router";
-import routes from "@/work/routes";
 import type {ItemType, MenuProps} from "ant-design-vue";
+import routes from "@/pages/routes";
 const selectedKeys1 = ref<string[]>(['worktable']);
 const menus = ref<MenuProps['items']>(routes.map(e => {
   return {
