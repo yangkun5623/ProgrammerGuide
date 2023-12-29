@@ -1,20 +1,31 @@
 const menus = [
     {
-        name: 'vueJs',
-        title: "Vue.js示例",
+        key: 'vueJs',
+        label: "Vue.js示例",
     },
     {
-        name: 'typeScript',
-        title: "typeScript示例",
+        key: 'typeScript',
+        label: "typeScript示例",
     },
     {
-        name: 'nuxtJs',
-        title: "Nuxt.js示例",
+        key: 'nuxtJs',
+        label: "Nuxt.js示例",
     },
     {
-        name: 'piniaJs',
-        title: "Pinia示例",
-    }
+        key: 'piniaJs',
+        label: "Pinia示例",
+    },
+    {
+        key: 'plugins',
+        label: "插件使用",
+        children: [
+            {
+                key: 'vMdEditor',
+                label: "Md编辑器(v-md-editor)",
+            },
+        ]
+    },
+
 ]
 
 export default menus

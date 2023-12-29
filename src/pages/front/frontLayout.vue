@@ -15,13 +15,15 @@ const selectedKeys = ref<string[]>(['vueJs']);
 const openKeys = ref<string[]>(['sub1']);
 const items = ref<MenuProps['items']>(menus.map(e => {
   return {
-    title: e.title,
-    label: e.title,
-    key: e.name,
+    label: e.label,
+    key: e.key,
+    children: e.children
   } as ItemType
 }));
 
 const handleClick = (e: any) => {
+  console.log('e', e)
+  console.log('selectedKeys', selectedKeys.value)
   router.push({
     name: e.key
   })
@@ -34,7 +36,7 @@ const handleClick = (e: any) => {
         <a-menu
             v-model:openKeys="openKeys"
             v-model:selectedKeys="selectedKeys"
-            style="width: 256px;border-right: none;min-height: 100%"
+            style="width: 100%;border-right: none;min-height: 100%"
             mode="inline"
             :items="items"
             @click="handleClick"

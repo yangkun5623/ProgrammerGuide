@@ -5,6 +5,7 @@ import vueJs from "@/pages/front/part/vueJs.vue";
 import nuxtJs from "@/pages/front/part/nuxtJs.vue";
 import typeScript from "@/pages/front/part/typeScript.vue";
 import piniaJs from "@/pages/front/part/piniaJs.vue";
+import vMdEditor from "@/pages/front/part/plugins/vMdEditor.vue";
 
 const routes = [
     {
@@ -43,6 +44,12 @@ const routes = [
                 name: 'nuxtJs',
                 title: "Nuxt.js示例",
                 component: nuxtJs
+            },
+            {
+                path: '/vMdEditor',
+                name: 'vMdEditor',
+                title: "vMdEditor使用",
+                component: vMdEditor
             }
         ],
     },
