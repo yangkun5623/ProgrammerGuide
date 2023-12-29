@@ -2,15 +2,8 @@
 import {ref} from "vue";
 import MdEditor from "@/components/mdEditor/mdEditor.vue";
 const previewData = ref('')
-try {
-  fetch('src/pages/front/part/plugins/vMdEditorRead.md')
-      .then(data => data.text())
-      .then(data => {
-        previewData.value = data
-      })
-} catch (e) {
-
-}
+import vMdEditorRead from './vMdEditorRead'
+previewData.value = vMdEditorRead
 </script>
 
 <template>

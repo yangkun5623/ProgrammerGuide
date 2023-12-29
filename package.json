@@ -17,6 +17,7 @@
     "@ant-design/icons-vue": "^7.0.1",
     "@kangc/v-md-editor": "^2.3.18",
     "ant-design-vue": "^4.0.8",
+    "copy-webpack-plugin": "^11.0.0",
     "dayjs": "^1.11.10",
     "less": "^4.2.0",
     "less-loader": "^11.1.3",
