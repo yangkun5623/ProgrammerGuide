@@ -1,21 +1,19 @@
-const meText: string = `
-
 ## 前言
 
-\`\`\`v-md-editor\`\`\`是一个基于Vue的Markdown编辑器插件，支持Vue 3和TypeScript
+```v-md-editor```是一个基于Vue的Markdown编辑器插件，支持Vue 3和TypeScript
 
 ## 安装依赖
 
-\`\`\`
+```
 pnpm install @kangc/v-md-editor
-\`\`\`
+```
 
 ## 导入组件
 
 
 ### 导入v-md-editor组件
 
-\`\`\`javascript
+```
 <!--src/components/mdEditor/index.ts-->
 
 import VueMarkdownEditor from '@kangc/v-md-editor'
@@ -31,13 +29,13 @@ VueMarkdownEditor.use(vuepressTheme, {
 })
 
 export default VueMarkdownEditor
-\`\`\`
+```
 
 在上述代码中，我们还导入了基础的编辑器样式和VuePress主题样式，并使用VMdEditor.use()方法来启用VuePress主题。
 
 ### 导入到Vue
 
-\`\`\`javascript
+```javascript
 <!--src/components/index.ts-->
 
 import type { App  } from 'vue'
@@ -57,11 +55,11 @@ const plugins = {
 }
 
 export default plugins
-\`\`\`
+```
 
 ### 在入口函数引入
 
-\`\`\`javascript
+```javascript
 <!--src/main.ts-->
 
 import { createApp } from 'vue'
@@ -75,13 +73,13 @@ app.use(plugins)
 
 app.mount('#app')
 
-\`\`\`
+```
 
 ## 创建Markdown编辑器组件
 
 创建一个Vue组件来使用Markdown编辑器。例如：
 
-\`\`\`javascript
+```javascript
 <!--src/components/mdEditor/mdEditor.vue-->
 <script setup lang="ts">
     import {computed} from "vue";
@@ -115,14 +113,14 @@ app.mount('#app')
     :height="height"></v-md-editor>
 </template>
 
-\`\`\`
+```
 在上述代码中，我们创建了一个名为MarkdownEditor的组件，其中包含一个v-md-editor组件。我们使用v-model指令将编辑器的内容绑定到markdownText属性。
 
 ## 使用Markdown编辑器
 
 在应用程序中使用MarkdownEditor组件。例如：
 
-\`\`\`javascript
+```
 <!-- App.vue -->
 <script setup lang="ts">
 import {ref} from "vue";
@@ -139,13 +137,10 @@ previewData.value = vMdEditorRead
 <style scoped>
 
 </style>
-\`\`\`
+```
 在上述代码中，我们在App.vue组件中使用了MarkdownEditor组件。
 
 以上就是在Vue 3和TypeScript环境下使用v-md-editor的基本步骤。你可以根据你的实际需求进行适当的调整和定制。
 
 
 ## [vue-markdown-editor官网入口](https://ckang1229.gitee.io/vue-markdown-editor/zh/ "https://ckang1229.gitee.io/vue-markdown-editor/zh/")
-`
-
-export default meText

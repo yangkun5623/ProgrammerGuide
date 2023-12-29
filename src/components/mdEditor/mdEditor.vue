@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {computed} from "vue";
-// ......上面这些是多语言配置，如果用不到切换语言请忽略 ......
 interface Props {
   modelValue: string
   height?: string // 编辑器的高度
@@ -21,12 +20,6 @@ const newValue = computed({
     emit('update:modelValue', value)
   }
 })
-// 内容变化时触发的事件。text 为输入的内容，html 为解析之后的 html 字符串。
-const handleChange = (text: string, html: string) => {
-  // console.log(JSON.stringify(text))
-  console.log(html)
-  // 如果有需要这些值，可以传回给父组件
-}
 </script>
 
 <template>
@@ -34,8 +27,7 @@ const handleChange = (text: string, html: string) => {
       :placeholder="placeholder"
       :disabled-menus="[]"
       v-model="newValue"
-      :height="height"
-      @change="handleChange"></v-md-editor>
+      :height="height"></v-md-editor>
 </template>
 
 <style scoped>

@@ -9,10 +9,9 @@ import menus from "@/pages/front/menus";
 const contentStyle: CSSProperties = {
   backgroundColor: 'white',
   marginLeft: '6px',
-  padding: '6px'
+  padding: '6px',
 };
 const selectedKeys = ref<string[]>(['vueJs']);
-const openKeys = ref<string[]>(['sub1']);
 const items = ref<MenuProps['items']>(menus.map(e => {
   return {
     label: e.label,
@@ -22,8 +21,6 @@ const items = ref<MenuProps['items']>(menus.map(e => {
 }));
 
 const handleClick = (e: any) => {
-  console.log('e', e)
-  console.log('selectedKeys', selectedKeys.value)
   router.push({
     name: e.key
   })
@@ -34,7 +31,6 @@ const handleClick = (e: any) => {
   <a-layout style="min-height: 100%">
       <a-layout-sider width="256">
         <a-menu
-            v-model:openKeys="openKeys"
             v-model:selectedKeys="selectedKeys"
             style="width: 100%;border-right: none;min-height: 100%"
             mode="inline"
