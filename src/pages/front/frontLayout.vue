@@ -3,7 +3,6 @@ import type { CSSProperties } from 'vue';
 import { reactive, ref, watch, VueElement, h } from 'vue';
 import type { MenuProps, ItemType } from 'ant-design-vue';
 import {useRouter} from "vue-router";
-import routes from "@/pages/routes";
 const router = useRouter();
 import menus from "@/pages/front/menus";
 
@@ -12,7 +11,7 @@ const contentStyle: CSSProperties = {
   marginLeft: '6px',
   padding: '6px'
 };
-const selectedKeys = ref<string[]>(['1']);
+const selectedKeys = ref<string[]>(['vueJs']);
 const openKeys = ref<string[]>(['sub1']);
 const items = ref<MenuProps['items']>(menus.map(e => {
   return {
