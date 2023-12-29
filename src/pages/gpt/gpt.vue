@@ -3,9 +3,8 @@
 </script>
 
 <template>
-  <iframe style="height: calc(100vh - 100px);width: 100%;border: none" src="https://www.shieru.info/"/>
+  <iframe style="height: 100%;width: 100%;border: none" src="https://www.shieru.xyz/sakura/inde.html"/>
 </template>
 
-<style scoped>
-
+<style scoped lang="less">
 </style>
