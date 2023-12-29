@@ -1,12 +1,19 @@
 <script setup lang="ts">
-
-import MdEditor from "@/components/mdEditor/mdEditor.vue";
 import {ref} from "vue";
-const previewData = ref('#这里是要预览的markdown数据')
+import MdEditor from "@/components/mdEditor/mdEditor.vue";
+const previewData = ref('')
+try {
+  fetch('src/pages/front/part/plugins/vMdEditorRead.md')
+      .then(data => data.text())
+      .then(data => {
+        previewData.value = data
+      })
+} catch (e) {
+
+}
 </script>
 
 <template>
-  <div>typeScript</div>
   <md-editor :model-value="previewData" mode="preview"></md-editor>
 </template>
 

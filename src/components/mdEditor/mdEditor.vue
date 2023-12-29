@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import zhEn from '@kangc/v-md-editor/lib/lang/zh-CN'
-import VueMarkdownEditor from '@kangc/v-md-editor'
 import {computed} from "vue";
-VueMarkdownEditor['lang'].use('zh-cn', zhEn)
 // ......上面这些是多语言配置，如果用不到切换语言请忽略 ......
 interface Props {
   modelValue: string
@@ -13,7 +10,6 @@ interface EmitEvent {
   (e: 'update:modelValue', params: string): void
 }
 const props = withDefaults(defineProps<Props>(), {
-  height: '500px',
   placeholder: '请输入内容'
 })
 const emit = defineEmits<EmitEvent>()
