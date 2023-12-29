@@ -3,9 +3,9 @@
 </script>
 
 <template>
-<div>
-  Vue11
-</div>
+  <div>
+    Vue11aaaaaaaaaa
+  </div>
 </template>
 
 <style scoped>

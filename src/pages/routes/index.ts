@@ -1,9 +1,7 @@
 import Worktable from "@/pages/worktable/worktable.vue";
 import Gpt from "@/pages/gpt/gpt.vue";
 import frontLayout from "@/pages/front/frontLayout.vue";
-import Sakura from "@/pages/sakura/sakura.vue";
-import frontRoutes from "@/pages/front/routes";
-
+import vueDemo from "@/pages/front/part/vueDemo.vue";
 
 const routes = [
     {
@@ -13,18 +11,19 @@ const routes = [
         component: Worktable
     },
     {
-        path: '/sakura',
-        name: 'sakura',
-        title: '樱花',
-        component: Sakura
-    },
-    {
         path: '/frontLayout',
         name: 'frontLayout',
         title: '前端',
         component: frontLayout,
-        children: frontRoutes,
-        redirect: 'vueDemo',
+        children: [
+            {
+                path: '/vueDemo',
+                name: 'vueDemo',
+                title: "Vue.js示例",
+                component: vueDemo
+            }
+        ],
+        redirect: '/vueDemo',
     },
     {
         path: '/gpt',

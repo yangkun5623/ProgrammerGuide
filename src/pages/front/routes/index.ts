@@ -6,9 +6,5 @@ export default [
         name: 'vueDemo',
         title: "Vue.js示例",
         component: vueDemo
-    },
-    {
-        path: '/',
-        redirect: 'vueDemo'
     }
 ]

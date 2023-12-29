@@ -13,7 +13,6 @@ const menus = ref<MenuProps['items']>(routes.map(e => {
 }));
 const router = useRouter();
 const changeMenu = (e: { key: string }) => {
-  console.log('e',e)
   router.push({
     name: e.key
   })
