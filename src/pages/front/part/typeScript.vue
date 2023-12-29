@@ -3,9 +3,7 @@
 </script>
 
 <template>
-<div>
-  Vue11
-</div>
+  <div>typeScript</div>
 </template>
 
 <style scoped>

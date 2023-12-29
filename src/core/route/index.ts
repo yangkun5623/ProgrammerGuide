@@ -9,7 +9,7 @@ const router = createRouter({
       path: '/layout',
       name: 'layout',
       component: Layout,
-      redirect: 'gpt',
+      redirect: 'worktable',
       children: routes,
     },
     {

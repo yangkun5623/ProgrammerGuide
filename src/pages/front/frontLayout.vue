@@ -3,20 +3,18 @@ import type { CSSProperties } from 'vue';
 import { reactive, ref, watch, VueElement, h } from 'vue';
 import type { MenuProps, ItemType } from 'ant-design-vue';
 import {useRouter} from "vue-router";
+import routes from "@/pages/routes";
 const router = useRouter();
+import menus from "@/pages/front/menus";
 
 const contentStyle: CSSProperties = {
-  textAlign: 'center',
-  color: '#fff',
   backgroundColor: 'white',
-  marginLeft: '6px'
+  marginLeft: '6px',
+  padding: '6px'
 };
-
 const selectedKeys = ref<string[]>(['1']);
 const openKeys = ref<string[]>(['sub1']);
-
-import routes from "./routes";
-const items = ref<MenuProps['items']>(routes.map(e => {
+const items = ref<MenuProps['items']>(menus.map(e => {
   return {
     title: e.title,
     label: e.title,
@@ -24,16 +22,11 @@ const items = ref<MenuProps['items']>(routes.map(e => {
   } as ItemType
 }));
 
-const handleClick: MenuProps['onClick'] = e => {
+const handleClick = (e: any) => {
   router.push({
     name: e.key
   })
 };
-
-watch(openKeys, val => {
-  console.log('openKeys', val);
-});
-const value = ref('')
 </script>
 
 <template>
