@@ -1,5 +1,4 @@
 import Worktable from "@/pages/worktable/worktable.vue";
-import Gpt from "@/pages/gpt/gpt.vue";
 import frontLayout from "@/pages/front/frontLayout.vue";
 import vueJs from "@/pages/front/part/vueJs.vue";
 import nuxtJs from "@/pages/front/part/nuxtJs.vue";
@@ -53,13 +52,6 @@ const routes = [
             }
         ],
     },
-    {
-        path: '/gpt',
-        name: 'gpt',
-        title: 'GPT',
-        component: Gpt
-    },
-
 ]
 
 export default routes
