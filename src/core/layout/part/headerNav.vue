@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import {useRouter} from "vue-router";
 import type {ItemType, MenuProps} from "ant-design-vue";
 import routes from "@/pages/routes";
-const selectedKeys1 = ref<string[]>(['worktable']);
+const selectedKeys1 = ref<string[]>(['frontLayout']);
 const menus = ref<MenuProps['items']>(routes.map(e => {
   return {
     title: e.title,

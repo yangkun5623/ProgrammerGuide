@@ -39,7 +39,11 @@ const handleClick = (e: any) => {
         ></a-menu>
       </a-layout-sider>
       <a-layout-content :style="contentStyle">
-        <RouterView/>
+        <RouterView v-slot="{Component}" key="dddddd">
+          <keep-alive :include="/[a-zA-Z-\d]*/">
+            <component :is="Component"/>
+          </keep-alive>
+        </RouterView>
       </a-layout-content>
   </a-layout>
 </template>

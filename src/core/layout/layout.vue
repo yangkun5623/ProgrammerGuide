@@ -25,7 +25,11 @@ const backTopElm = () => {
       <header-nav/>
     </a-layout-header>
     <a-layout-content :style="contentStyle" id="content">
-      <RouterView/>
+      <RouterView v-slot="{Component}" key="ddd">
+        <keep-alive :include="/[a-zA-Z-\d]*/">
+            <component :is="Component"/>
+        </keep-alive>
+      </RouterView>
 <!--      <footer-bar/>-->
     </a-layout-content>
     <a-float-button-group shape="circle">

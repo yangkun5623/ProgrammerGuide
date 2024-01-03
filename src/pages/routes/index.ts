@@ -8,12 +8,6 @@ import vMdEditor from "@/pages/front/part/plugins/vMdEditor.vue";
 
 const routes = [
     {
-        path: '/worktable',
-        name: 'worktable',
-        title: '工作台',
-        component: Worktable
-    },
-    {
         path: '/frontLayout',
         name: 'frontLayout',
         title: '前端',
@@ -51,6 +45,12 @@ const routes = [
                 component: vMdEditor
             }
         ],
+    },
+    {
+        path: '/worktable',
+        name: 'worktable',
+        title: '工作台',
+        component: Worktable
     },
 ]
 
