@@ -6,8 +6,8 @@ const mockData = {
         {
             id: '1',
             label: '张三',
-            left: 50,
-            top: 200,
+            left: 600,
+            top: 50,
             iconType: 'icon-wo',
             Class: Node,
             endpoints: [{
@@ -19,9 +19,9 @@ const mockData = {
                 orientation: [0, 1],
                 pos: [0.5, 0]
             }, {
-                id: 'top',
-                orientation: [0, -1],
-                pos: [0.5, 0]
+                id: 'left',
+                orientation: [-1, 0],
+                pos: [0, 0.5]
             }]
         },
         {
@@ -175,7 +175,7 @@ const mockData = {
     ],
     edges: [
         {
-            source: 'top',
+            source: 'left',
             target: 'right',
             sourceNode: '1',
             targetNode: '2',
