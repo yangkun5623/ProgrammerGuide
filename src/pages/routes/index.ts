@@ -4,7 +4,9 @@ import vueJs from "@/pages/front/part/vueJs.vue";
 import nuxtJs from "@/pages/front/part/nuxtJs.vue";
 import typeScript from "@/pages/front/part/typeScript.vue";
 import piniaJs from "@/pages/front/part/piniaJs.vue";
-import vMdEditor from "@/pages/front/part/plugins/vMdEditor.vue";
+import vMdEditor from "@/pages/front/part/plugins/vMdEditor/vMdEditor.vue";
+import vsCode from "@/pages/front/part/envs/vscode/vsCode.vue";
+import butterfly from "@/pages/front/part/plugins/butterfly/butterfly.vue";
 
 const routes = [
     {
@@ -43,7 +45,19 @@ const routes = [
                 name: 'vMdEditor',
                 title: "vMdEditor使用",
                 component: vMdEditor
-            }
+            },
+            {
+                path: '/vsCode',
+                name: 'vsCode',
+                title: "vsCode",
+                component: vsCode
+            },
+            {
+                path: '/butterfly',
+                name: 'butterfly',
+                title: "流程编排",
+                component: butterfly
+            },
         ],
     },
     {

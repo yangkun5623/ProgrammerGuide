@@ -5,6 +5,7 @@ import type { MenuProps, ItemType } from 'ant-design-vue';
 import {useRouter} from "vue-router";
 const router = useRouter();
 import menus from "@/pages/front/menus";
+import {getUUID} from "ant-design-vue/es/vc-dialog/util";
 
 const contentStyle: CSSProperties = {
   backgroundColor: 'white',
@@ -40,8 +41,8 @@ const handleClick = (e: any) => {
       </a-layout-sider>
       <a-layout-content :style="contentStyle">
         <RouterView v-slot="{Component}" key="dddddd">
-          <keep-alive :include="/[a-zA-Z-\d]*/">
-            <component :is="Component"/>
+          <keep-alive>
+            <component :key="getUUID()" :is="Component" v-if="true"/>
           </keep-alive>
         </RouterView>
       </a-layout-content>

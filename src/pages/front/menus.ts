@@ -23,8 +23,22 @@ const menus = [
                 key: 'vMdEditor',
                 label: "Md编辑器(v-md-editor)",
             },
+            {
+                key: 'butterfly',
+                label: "流程编排",
+            },
         ]
     },
+    // {
+    //     key: 'envs',
+    //     label: "开发工具/开发环境",
+    //     children: [
+    //         {
+    //             key: 'vsCode',
+    //             label: "vsCode",
+    //         },
+    //     ]
+    // },
 
 ]
 
