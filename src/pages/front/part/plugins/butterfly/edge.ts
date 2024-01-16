@@ -2,7 +2,7 @@ import $ from 'jquery';
 import {Edge} from 'butterfly-dag';
 
 class BaseEdge extends Edge {
-    draw(obj) {
+    draw(obj:any) {
         let path = super.draw(obj);
         if (this.options.color) {
             $(path).addClass(this.options.color);
@@ -10,7 +10,7 @@ class BaseEdge extends Edge {
         return path;
     }
 
-    drawArrow(isShow) {
+    drawArrow(isShow:any) {
         let dom = super.drawArrow(isShow);
         if (this.options.color) {
             $(dom).addClass(this.options.color);
@@ -18,7 +18,7 @@ class BaseEdge extends Edge {
         return dom;
     }
 
-    drawLabel(text) {
+    drawLabel(text:any) {
         let dom = null;
         if (text) {
             dom = $(`<i class="newIconfont iconjiandao-tianchong label ${text}"></i>`)[0];

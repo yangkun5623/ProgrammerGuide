@@ -8,9 +8,9 @@ import mockData from "@/pages/front/part/plugins/butterfly/data";
 import panelPlugins from 'butterfly-dag/plugins/panel/dist';
 import 'butterfly-dag/plugins/panel/dist/index.css';
 import './iconfont.less'
+import './index.less'
 //画布
 
-let PanelNode = panelPlugins.PanelNode;
 
 onMounted(() => {
   let root = document.getElementById('dag-canvas');
@@ -70,6 +70,41 @@ onMounted(() => {
   <div class='flow-page'>
     <div class="flow-panel" id="dnd"></div>
     <div class="flow-canvas" id="dag-canvas">
+    </div>
+    <div className='operate-bar'>
+      <div className='operate-bar-title'>属性配置</div>
+      <div className='operate-item'>
+        <div className='operate-node'>增删节点:</div>
+        <a-button  >添加节点</a-button>
+        <a-button >删除节点</a-button>
+      </div>
+      <div className='operate-item'>
+        <div className='operate-rankdir'>布局方向:</div>
+        <a-select defaultValue="TB" style="width: 100%" >
+        <Option value="TB">TB</Option>
+        <Option value="BT">BT</Option>
+        <Option value="LR">LR</Option>
+        <Option value="RL">RL</Option>
+        </a-select>
+      </div>
+      <div className='operate-item'>
+        <div className='operate-align'>对齐方向:</div>
+        <a-select defaultValue='默认' style="width: 100%" >
+        <Option value={undefined}>默认</Option>
+        <Option value="UL">UL</Option>
+        <Option value="UR">UR</Option>
+        <Option value="DL">DL</Option>
+        <Option value="DR">DR</Option>
+        </a-select>
+      </div>
+      <div className='operate-item'>
+        <div className='operate-nodesep'>水平间距:</div>
+        <a-slider defaultValue={40}   />
+      </div>
+      <div className='operate-item'>
+        <div className='operate-ranksep'>层间距:</div>
+        <a-slider defaultValue={40} />
+      </div>
     </div>
   </div>
   <a href="https://butterfly-dag.gitee.io/butterfly-dag/demo/flow" target="_blank">官网</a>

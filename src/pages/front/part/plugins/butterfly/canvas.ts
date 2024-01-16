@@ -6,12 +6,12 @@ const EVENTTYPE = {
 };
 
 class IndustryCanvas extends Canvas {
-    constructor(...args) {
+    constructor(...args:any[]) {
         super(...args);
         this.listenEventProxy();
     }
     listenEventProxy() {
-        this.on('events', (data) => {
+        this.on('events', (data:any) => {
             if (data.type.indexOf(EVENTTYPE.NODECLICK) !== -1) {
                 // 取消所有节点focus
                 this._unFocusAllNode();
@@ -24,7 +24,7 @@ class IndustryCanvas extends Canvas {
         });
     }
     _unFocusAllNode() {
-        this.nodes.forEach((node) => {
+        this.nodes.forEach((node:any) => {
             node.unFocus();
         });
     }

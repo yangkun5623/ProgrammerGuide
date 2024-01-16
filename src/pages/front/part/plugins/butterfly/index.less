@@ -33,3 +33,63 @@
     transform: rotate(0deg);
   }
 }
+
+.operate-bar{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  box-shadow:@butterfly-box-shadow;
+  border:@butterfly-box-border;
+  border-radius: 4px;
+  padding: 10px;
+  background-color: @butterfly-theme-color;
+  color:@butterfly-normal-font-color;
+  .operate-bar-title{
+    height: 30px;
+    width: 100%;
+    line-height: 30px;
+    text-align: center;
+    background-color: @butterfly-primary-color;
+    color: @butterfly-overlay-font-color;
+    margin-bottom: 10px;
+  }
+  .operate-item{
+    margin-bottom: 10px;
+    .operate-node{
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .ant-select-focused{
+      .ant-select-selection{
+        background-color: @butterfly-theme-color;
+        border: @butterfly-box-node-border-hover;
+        box-shadow:0 0 2px @butterfly-primary-color;
+      }
+    }
+    .ant-select-enabled{
+      .ant-select-selection{
+        background-color: @butterfly-theme-color;
+        color:@butterfly-normal-font-color;
+      }
+    }
+    .ant-btn{
+      background-color: @butterfly-theme-color;
+      color:@butterfly-normal-font-color;
+    }
+    .ant-btn:hover,.ant-btn:focus,.ant-select-selection:hover{
+      border: @butterfly-box-node-border-hover;
+      color: @butterfly-primary-color;
+    }
+    .ant-slider{
+      .ant-slider-track{
+        background-color: @butterfly-primary-color;
+      }
+      .ant-slider-handle{
+        border:2px solid @butterfly-primary-color;
+      }
+    }
+  }
+}

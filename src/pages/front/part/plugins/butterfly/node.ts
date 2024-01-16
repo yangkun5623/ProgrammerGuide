@@ -3,7 +3,7 @@ import {Node} from 'butterfly-dag';
 
 import './node.less';
 class BaseNode extends Node {
-    constructor(opts) {
+    constructor(opts:any) {
         super(opts);
         this.options = opts;
         this._endpoint = [];
@@ -11,7 +11,7 @@ class BaseNode extends Node {
         this._isInEndpoint = false;
     }
 
-    draw = (opts) => {
+    draw = (opts:any) => {
         const container = $('<div class="flow-base-node"></div>')
             .css('top', opts.top)
             .css('left', opts.left)
@@ -22,13 +22,6 @@ class BaseNode extends Node {
         const content = $('<div class="text"></div>').text(opts.options.label);
 
         container.append(logoContainer).append(content);
-
-        container.on('click', (e) => {
-            $(this.dom).find('.logo-toolbar').addClass('show');
-        });
-        container.on('blur', (e) => {
-            $(this.dom).find('.logo-toolbar').removeClass('show');
-        });
 
         this._createIcon(container[0]);
 
@@ -51,7 +44,7 @@ class BaseNode extends Node {
         boxContainer.append($('<div class="box"><i class="iconfont icon-webicon310"></i></div>'));
         boxContainer.append($('<div class="box"><i class="iconfont icon-renyuanguanli"></i></div>'));
 
-        boxContainer.on('click', (res) => {
+        boxContainer.on('click', (res:any) => {
             console.log(111, this.options)
         })
         logoContainer.append(boxContainer);
