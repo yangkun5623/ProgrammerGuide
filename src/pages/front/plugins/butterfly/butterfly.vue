@@ -4,7 +4,7 @@ import Canvas from './canvas.js'
 // import * as HotKeyPlugin from 'butterfly-dag/plugins/hotkey/dist/index.unpkg.js';
 import 'butterfly-dag/dist/index.css';
 import {onMounted, ref} from "vue";
-import mockData from "@/pages/front/part/plugins/butterfly/data";
+import mockData from "@/pages/front/plugins/butterfly/data";
 import panelPlugins from 'butterfly-dag/plugins/panel/dist';
 import 'butterfly-dag/plugins/panel/dist/index.css';
 import './iconfont.less'

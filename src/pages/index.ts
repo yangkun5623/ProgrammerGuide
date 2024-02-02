@@ -2,13 +2,13 @@ import vueJs from "@/pages/front/part/vueJs.vue";
 import nuxtJs from "@/pages/front/part/nuxtJs.vue";
 import typeScript from "@/pages/front/part/typeScript.vue";
 import piniaJs from "@/pages/front/part/piniaJs.vue";
-import vMdEditor from "@/pages/front/part/plugins/vMdEditor/vMdEditor.vue";
-import vsCode from "@/pages/front/part/envs/vscode/vsCode.vue";
-import butterfly from "@/pages/front/part/plugins/butterfly/butterfly.vue";
+import vMdEditor from "@/pages/front/plugins/vMdEditor/vMdEditor.vue";
+import vsCode from "@/pages/envs/vscode/vsCode.vue";
+// import butterfly from "@/pages/front/plugins/butterfly/butterfly.vue";
 import pages from "@/pages/pages.vue";
-import git from "@/pages/front/part/envs/git.vue";
-import nodejs from "@/pages/front/part/envs/nodejs.vue";
-import oneDrive from "@/pages/front/part/other/oneDrive.vue";
+import git from "@/pages/envs/git.vue";
+import nodejs from "@/pages/envs/nodejs.vue";
+import oneDrive from "@/pages/other/oneDrive.vue";
 
 const routes = [
     {
@@ -117,12 +117,12 @@ const routes = [
                         title: "vsCode",
                         component: vsCode
                     },
-                    {
-                        path: '/butterfly',
-                        name: 'butterfly',
-                        title: "流程编排",
-                        component: butterfly
-                    },
+                    // {
+                    //     path: '/butterfly',
+                    //     name: 'butterfly',
+                    //     title: "流程编排",
+                    //     component: butterfly
+                    // },
                 ]
             },
         ],
