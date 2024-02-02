@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import {inject, ref} from "vue";
 import MdEditor from "@/components/mdEditor/mdEditor.vue";
+import {inject, ref} from "vue";
 const previewData = ref('')
 const syncLoadFile: any = inject('syncLoadFile')
-syncLoadFile('/md/vMdEditorRead.md')
+syncLoadFile('/md/Node安装配置.md')
     .then((text: string)=> {
       previewData.value = text
     })

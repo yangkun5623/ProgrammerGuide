@@ -1,4 +1,5 @@
 import './assets/main.css'
+import './assets/common.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -16,6 +17,9 @@ app.use(Antd)
 app.use(router)
 app.use(plugins)
 app.use(createPinia())
+
+// 添加全局方法
+
 
 app.mount('#app')
 

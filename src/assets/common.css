@@ -1,0 +1,18 @@
+.beautifyScrollbar{
+  scrollbar-width: thin;
+}
+.beautifyScrollbar::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+  background-color: transparent;
+}
+.beautifyScrollbar::-webkit-scrollbar-thumb {
+  border-radius: 1px;
+  background-color: #cfd6dd;
+}
+
+.beautifyScrollbar::-webkit-scrollbar-thumb:hover {
+  border-radius: 1px;
+  -webkit-box-shadow: inset 0 0 1px 1px rgba(102, 102, 102, 0.2);
+  background: rgba(102, 102, 102, 0.4);
+}
