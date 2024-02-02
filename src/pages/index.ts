@@ -16,7 +16,8 @@ const routes = [
         name: 'env',
         title: '环境',
         meta: {
-            title: '环境'
+            title: '环境',
+            icon:  'FolderOpenOutlined'
         },
         component: pages,
         redirect: '/git',

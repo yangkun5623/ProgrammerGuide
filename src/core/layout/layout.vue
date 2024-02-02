@@ -55,6 +55,7 @@ const toggleCollapsed = () => {
 import {useRoute} from "vue-router";
 import type {MenuItemType, SubMenuType} from "ant-design-vue/es/menu/src/interface";
 import router from "@/core/route";
+import {FolderOpenOutlined} from  "@ant-design/icons-vue";
 const getMenuRoutes: any = (routes: any[]) => {
   const menus: any[] = [];
   // 遍历路由，将meta中title为菜单的项添加到menus中
@@ -64,6 +65,7 @@ const getMenuRoutes: any = (routes: any[]) => {
         const menu:SubMenuType = {
           key: e.name,
           label: e.meta.title,
+          icon: () => h(FolderOpenOutlined),
           children: getMenuRoutes(e.children)
         }
         menus.push(menu)
