@@ -1,14 +1,13 @@
-import vueJs from "@/pages/front/part/vueJs.vue";
-import nuxtJs from "@/pages/front/part/nuxtJs.vue";
-import typeScript from "@/pages/front/part/typeScript.vue";
-import piniaJs from "@/pages/front/part/piniaJs.vue";
-import vMdEditor from "@/pages/front/plugins/vMdEditor/vMdEditor.vue";
-import vsCode from "@/pages/envs/vscode/vsCode.vue";
-// import butterfly from "@/pages/front/plugins/butterfly/butterfly.vue";
 import pages from "@/pages/pages.vue";
 import git from "@/pages/envs/git.vue";
-import nodejs from "@/pages/envs/nodejs.vue";
-import oneDrive from "@/pages/other/oneDrive.vue";
+import nodejs from  "@/pages/envs/nodejs.vue";
+import vueJs  from  "@/pages/front/technical/vueJs.vue";
+import typeScript  from  "@/pages/front/technical/typeScript.vue";
+import piniaJs  from  "@/pages/front/technical/piniaJs.vue";
+import nuxtJs  from  "@/pages/front/technical/nuxtJs.vue";
+import vMdEditor from "@/pages/front/plugins/vMdEditor/vMdEditor.vue";
+import oneDrive from "@/pages/other/oneDrive.vue"
+
 
 const routes = [
     {
@@ -110,12 +109,6 @@ const routes = [
                         },
                         title: "vMdEditor使用",
                         component: vMdEditor
-                    },
-                    {
-                        path: '/vsCode',
-                        name: 'vsCode',
-                        title: "vsCode",
-                        component: vsCode
                     },
                     // {
                     //     path: '/butterfly',
