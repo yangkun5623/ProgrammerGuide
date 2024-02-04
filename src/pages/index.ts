@@ -7,6 +7,7 @@ import piniaJs  from  "@/pages/front/technical/piniaJs.vue";
 import nuxtJs  from  "@/pages/front/technical/nuxtJs.vue";
 import vMdEditor from "@/pages/front/plugins/vMdEditor/vMdEditor.vue";
 import oneDrive from "@/pages/other/oneDrive.vue"
+import butterfly from "@/pages/front/plugins/butterfly/butterfly.vue";
 
 
 const routes = [
@@ -110,12 +111,15 @@ const routes = [
                         title: "vMdEditor使用",
                         component: vMdEditor
                     },
-                    // {
-                    //     path: '/butterfly',
-                    //     name: 'butterfly',
-                    //     title: "流程编排",
-                    //     component: butterfly
-                    // },
+                    {
+                        path: '/butterfly',
+                        name: 'butterfly',
+                        meta: {
+                            title: '流程编排'
+                        },
+                        title: "流程编排",
+                        component: butterfly
+                    },
                 ]
             },
         ],

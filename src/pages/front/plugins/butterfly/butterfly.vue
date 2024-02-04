@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // 如果您引用的项目使用了jquery和lodash，为了缩小项目的体积，我们建议：
-import Canvas from './canvas.js'
+import Canvas from './canvas'
 // import * as HotKeyPlugin from 'butterfly-dag/plugins/hotkey/dist/index.unpkg.js';
 import 'butterfly-dag/dist/index.css';
 import {onMounted, ref} from "vue";
