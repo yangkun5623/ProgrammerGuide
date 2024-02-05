@@ -8,7 +8,6 @@ class IndustryCanvas extends Canvas {
     constructor(...args) {
         super(...args);
         this.listenEventProxy();
-        this.d = Object.getPrototypeOf(Object.getPrototypeOf(this))
     }
     listenEventProxy() {
         this.on('events', (data) => {
@@ -28,11 +27,11 @@ class IndustryCanvas extends Canvas {
             node.unFocus();
         });
     }
-    draw (...args) {
-        this.d.draw(...args)
+    on () {
+        return super.on.apply(this, arguments);
     }
-    on(...args) {
-        this.d.on(...args)
+    draw() {
+        return super.draw.apply(this, arguments);
     }
 }
 
