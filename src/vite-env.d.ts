@@ -7,4 +7,6 @@ declare module '*.gif'
 declare module '*.bmp'
 declare module '*.tiff'
 
-declare module 'jquery'
+declare module 'butterfly-dag/plugins/panel/dist'
+declare module '@kangc/v-md-editor'
+declare module '*.js'

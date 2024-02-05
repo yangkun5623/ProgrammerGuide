@@ -4,11 +4,11 @@ const EVENTTYPE = {
     NODECLICK: 'node:click',
     CANVASCLICK: 'canvas:click'
 };
-
 class IndustryCanvas extends Canvas {
     constructor(...args) {
         super(...args);
         this.listenEventProxy();
+        this.d = Object.getPrototypeOf(Object.getPrototypeOf(this))
     }
     listenEventProxy() {
         this.on('events', (data) => {
@@ -27,6 +27,12 @@ class IndustryCanvas extends Canvas {
         this.nodes.forEach((node) => {
             node.unFocus();
         });
+    }
+    draw (...args) {
+        this.d.draw(...args)
+    }
+    on(...args) {
+        this.d.on(...args)
     }
 }
 
