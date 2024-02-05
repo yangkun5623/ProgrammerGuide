@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <div class="slider" :style="{width: state.collapsed ? '81px' : '256px'}">
-      <div class="avatar" :style="{height: state.collapsed ? '81px' : '140px'}">
-        <img src="@/assets/avatar.jpg" width="80px"/>
+      <div class="avatar" :style="{height: state.collapsed ? '71px' : '140px'}">
+        <img src="@/assets/avatar.jpg" :width="state.collapsed ? '70px' : '80px'"/>
         <a-typography-title class="avatar-title" :style="{opacity: state.collapsed ? 0 : 1}">Shieru</a-typography-title>
       </div>
       <div class="menu beautifyScrollbar">
