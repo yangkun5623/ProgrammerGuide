@@ -8,16 +8,29 @@ import nuxtJs  from  "@/pages/front/technical/nuxtJs.vue";
 import vMdEditor from "@/pages/front/plugins/vMdEditor/vMdEditor.vue";
 import oneDrive from "@/pages/other/oneDrive.vue"
 import butterfly from "@/pages/front/plugins/butterfly/butterfly.vue";
+import home from "@/pages/home.vue";
 
 
 const routes = [
+    {
+        path: '/',
+        redirect: 'home'
+    },
+    {
+        path: '/home',
+        name: 'home',
+        title: '主页',
+        meta: {
+            title: '主页',
+        },
+        component: home,
+    },
     {
         path: '/env',
         name: 'env',
         title: '环境',
         meta: {
             title: '环境',
-            icon:  'FolderOpenOutlined'
         },
         component: pages,
         redirect: '/git',
@@ -56,11 +69,20 @@ const routes = [
                 path: '/technical',
                 name: 'technical',
                 meta: {
-                    title: 'technical'
+                    title: 'Technical'
                 },
                 title: "Technical",
                 component: pages,
                 children: [
+                    {
+                        path: '/pinia',
+                        name: 'pinia',
+                        meta: {
+                            title: 'Pinia'
+                        },
+                        title: "Pinia",
+                        component: pinia
+                    },
                     {
                         path: '/vueJs',
                         name: 'vueJs',
@@ -78,15 +100,6 @@ const routes = [
                         },
                         title: "typeScript示例",
                         component: typeScript
-                    },
-                    {
-                        path: '/pinia',
-                        name: 'pinia',
-                        meta: {
-                            title: 'Pinia'
-                        },
-                        title: "Pinia",
-                        component: pinia
                     },
                     {
                         path: '/nuxt.js',

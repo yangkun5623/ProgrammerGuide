@@ -30,14 +30,19 @@
 <script lang="ts" setup>
 import {reactive, watch, h, computed} from 'vue';
 import {useMenuConfigStore} from "@/stores/menuConfig";
+import {useRoute, useRouter} from "vue-router";
+import {FolderOpenOutlined} from  "@ant-design/icons-vue";
+import type { ItemType } from 'ant-design-vue'
+
+
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
 } from '@ant-design/icons-vue';
 const state = reactive({
-  selectedKeys: ['1'],
-  openKeys: ['sub1'],
-  preOpenKeys: ['sub1'],
+  selectedKeys: ['home'],
+  openKeys: [],
+  preOpenKeys: [],
 });
 const menuConfig = useMenuConfigStore()
 // 如果直接使用menuConfig.collapsed来展示值的话是不需要定义成computed计算属性的
@@ -49,11 +54,6 @@ watch(
       state.preOpenKeys = oldVal;
     },
 );
-
-import {useRoute} from "vue-router";
-import router from "@/core/route";
-import {FolderOpenOutlined} from  "@ant-design/icons-vue";
-import type { ItemType } from 'ant-design-vue'
 
 const getMenuRoutes: any = (routes: any[]) => {
   const menus: any[] = [];
@@ -82,6 +82,7 @@ const getMenuRoutes: any = (routes: any[]) => {
 const route =  useRoute()
 const menuRoutes =  route.matched.find(item => item.name === 'layout')
 const items = getMenuRoutes(menuRoutes?.children)
+const router = useRouter()
 const menuClick = (e:any) => {
   router.push({name: e.key})
 }
