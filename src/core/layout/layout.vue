@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <div class="slider" :style="{width: state.collapsed ? '81px' : '256px'}">
-      <div class="avatar" :style="{height: state.collapsed ? '71px' : '140px'}">
-        <img src="@/assets/avatar.jpg" :width="state.collapsed ? '70px' : '80px'"/>
-        <a-typography-title class="avatar-title" :style="{opacity: state.collapsed ? 0 : 1}">Shieru</a-typography-title>
+    <div class="slider" :style="{width: collapsed ? '81px' : '256px'}">
+      <div class="avatar" :style="{height: collapsed ? '71px' : '140px'}">
+        <img src="@/assets/avatar.jpg" :width="collapsed ? '70px' : '80px'"/>
+        <a-typography-title class="avatar-title" :style="{opacity: collapsed ? 0 : 1}">Shieru</a-typography-title>
       </div>
       <div class="menu beautifyScrollbar">
         <a-menu
@@ -11,14 +11,14 @@
             v-model:selectedKeys="state.selectedKeys"
             mode="inline"
             style="border: none"
-            theme="light"
-            :inline-collapsed="state.collapsed"
+            :theme="menuConfig.theme"
+            :inline-collapsed="collapsed"
             :items="items"
             @click="menuClick"
         ></a-menu>
       </div>
-      <a-button type="link" style="width: 100%" @click="toggleCollapsed">
-        <MenuUnfoldOutlined v-if="state.collapsed" />
+      <a-button type="link" style="width: 100%" @click="menuConfig.toggleCollapsed()">
+        <MenuUnfoldOutlined v-if="collapsed" />
         <MenuFoldOutlined v-else />
       </a-button>
     </div>
@@ -28,18 +28,20 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { reactive, watch, h } from 'vue';
+import {reactive, watch, h, computed} from 'vue';
+import {useMenuConfigStore} from "@/stores/menuConfig";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
 } from '@ant-design/icons-vue';
 const state = reactive({
-  collapsed: false,
   selectedKeys: ['1'],
   openKeys: ['sub1'],
   preOpenKeys: ['sub1'],
 });
-
+const menuConfig = useMenuConfigStore()
+// 如果直接使用menuConfig.collapsed来展示值的话是不需要定义成computed计算属性的
+let collapsed = computed(() => menuConfig.collapsed);
 
 watch(
     () => state.openKeys,
@@ -47,15 +49,12 @@ watch(
       state.preOpenKeys = oldVal;
     },
 );
-const toggleCollapsed = () => {
-  state.collapsed = !state.collapsed;
-  state.openKeys = state.collapsed ? [] : state.preOpenKeys;
-};
 
 import {useRoute} from "vue-router";
 import router from "@/core/route";
 import {FolderOpenOutlined} from  "@ant-design/icons-vue";
 import type { ItemType } from 'ant-design-vue'
+
 const getMenuRoutes: any = (routes: any[]) => {
   const menus: any[] = [];
   // 遍历路由，将meta中title为菜单的项添加到menus中

@@ -11,7 +11,9 @@ import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/reset.css';
 import router from './core/route'
 import plugins from "@/components";
+import MdEditor from "@/components/mdEditor";
 
+app.component('MdEditor', MdEditor)
 
 app.use(Antd)
 app.use(router)

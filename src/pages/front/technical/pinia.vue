@@ -2,7 +2,7 @@
 import {inject, ref} from "vue";
 const previewData = ref('')
 const syncLoadFile: any = inject('syncLoadFile')
-syncLoadFile('/md/Node安装配置.md')
+syncLoadFile('/md/Pinia.md')
     .then((text: string)=> {
       previewData.value = text
     })

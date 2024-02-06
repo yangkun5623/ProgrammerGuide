@@ -3,7 +3,7 @@ import git from "@/pages/envs/git.vue";
 import nodejs from  "@/pages/envs/nodejs.vue";
 import vueJs  from  "@/pages/front/technical/vueJs.vue";
 import typeScript  from  "@/pages/front/technical/typeScript.vue";
-import piniaJs  from  "@/pages/front/technical/piniaJs.vue";
+import pinia  from  "@/pages/front/technical/pinia.vue";
 import nuxtJs  from  "@/pages/front/technical/nuxtJs.vue";
 import vMdEditor from "@/pages/front/plugins/vMdEditor/vMdEditor.vue";
 import oneDrive from "@/pages/other/oneDrive.vue"
@@ -80,10 +80,13 @@ const routes = [
                         component: typeScript
                     },
                     {
-                        path: '/piniaJs',
-                        name: 'piniaJs',
-                        title: "piniaJs示例",
-                        component: piniaJs
+                        path: '/pinia',
+                        name: 'pinia',
+                        meta: {
+                            title: 'Pinia'
+                        },
+                        title: "Pinia",
+                        component: pinia
                     },
                     {
                         path: '/nuxt.js',

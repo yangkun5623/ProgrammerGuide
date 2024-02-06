@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import MdEditor from "@/components/mdEditor/mdEditor.vue";
 import {inject, ref} from "vue";
 const previewData = ref('')
 const syncLoadFile: any = inject('syncLoadFile')
