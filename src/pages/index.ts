@@ -15,7 +15,7 @@ import gpt from "@/pages/other/gpt.vue";
 const routes = [
     {
         path: '/',
-        redirect: 'gpt'
+        redirect: 'home'
     },
     {
         path: '/home',

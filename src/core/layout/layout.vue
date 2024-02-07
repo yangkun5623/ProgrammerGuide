@@ -49,7 +49,7 @@ const icons: { [key: string]: FunctionalComponent; } = {
 }
 
 const state = reactive({
-  selectedKeys: ['gpt'],
+  selectedKeys: ['home'],
   openKeys: [],
   preOpenKeys: [],
 });
