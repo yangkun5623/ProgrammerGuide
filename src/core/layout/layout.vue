@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <div class="slider" :style="{width: collapsed ? '81px' : '256px'}">
-      <div class="avatar" :style="{height: collapsed ? '71px' : '140px'}">
-        <img src="@/assets/avatar.jpg" :width="collapsed ? '70px' : '80px'"/>
+    <div class="slider" :style="{width: collapsed ? '61px' : '256px'}">
+      <div class="avatar" :style="{height: collapsed ? '61px' : '140px'}">
+        <img src="@/assets/avatar.jpg" :width="collapsed ? '60px' : '80px'"/>
         <a-typography-title class="avatar-title" :style="{opacity: collapsed ? 0 : 1}">Shieru</a-typography-title>
       </div>
       <div class="menu beautifyScrollbar">
@@ -10,7 +10,7 @@
             v-model:openKeys="state.openKeys"
             v-model:selectedKeys="state.selectedKeys"
             mode="inline"
-            style="border: none"
+            style="border: none;width: 100%"
             :theme="menuConfig.theme"
             :inline-collapsed="collapsed"
             :items="items"
