@@ -50,9 +50,9 @@ const routes = [
                 path: '/nodejs',
                 name: 'nodejs',
                 meta: {
-                    title: 'NodeJs'
+                    title: 'Node'
                 },
-                title: "NodeJs",
+                title: "Node",
                 component: nodejs
             },
         ]
@@ -89,24 +89,24 @@ const routes = [
                         path: '/vueJs',
                         name: 'vueJs',
                         meta: {
-                            title: 'Vue.js示例'
+                            title: 'Vue.js'
                         },
-                        title: "Vue.js示例",
+                        title: "Vue.js",
                         component: vueJs
                     },
                     {
                         path: '/typeScript',
                         name: 'typeScript',
                         meta: {
-                            title: 'typeScript示例'
+                            title: 'TypeScript'
                         },
-                        title: "typeScript示例",
+                        title: "TypeScript",
                         component: typeScript
                     },
                     {
                         path: '/nuxt.js',
                         name: 'nuxtJs',
-                        title: "Nuxt.js示例",
+                        title: "Nuxt.js",
                         component: nuxtJs
                     },
                 ]
@@ -124,18 +124,18 @@ const routes = [
                         path: '/vMdEditor',
                         name: 'vMdEditor',
                         meta: {
-                            title: 'vMdEditor使用'
+                            title: 'vMdEditor'
                         },
-                        title: "vMdEditor使用",
+                        title: "vMdEditor",
                         component: vMdEditor
                     },
                     {
                         path: '/butterfly',
                         name: 'butterfly',
                         meta: {
-                            title: '流程编排'
+                            title: 'Butterfly'
                         },
-                        title: "流程编排",
+                        title: "Butterfly",
                         component: butterfly
                     },
                 ]
