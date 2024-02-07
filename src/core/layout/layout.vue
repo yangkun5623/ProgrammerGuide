@@ -7,8 +7,8 @@
       </div>
       <div class="menu beautifyScrollbar">
         <a-menu
-            v-model:openKeys="state.openKeys"
-            v-model:selectedKeys="state.selectedKeys"
+            v-model:openKeys="menuConfig.openKeys"
+            v-model:selectedKeys="menuConfig.selectedKeys"
             mode="inline"
             style="border: none;width: 100%"
             :theme="menuConfig.theme"
@@ -28,7 +28,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import {reactive, watch, h, computed} from 'vue';
+import {watch, h, computed, onMounted} from 'vue';
 import {useMenuConfigStore} from "@/stores/menuConfig";
 import {useRoute, useRouter} from "vue-router";
 import type { ItemType } from 'ant-design-vue'
@@ -48,23 +48,20 @@ const icons: { [key: string]: FunctionalComponent; } = {
   BulbOutlined
 }
 
-const state = reactive({
-  selectedKeys: ['home'],
-  openKeys: [],
-  preOpenKeys: [],
-});
-
 const menuConfig = useMenuConfigStore()
 // 如果直接使用menuConfig.collapsed来展示值的话是不需要定义成computed计算属性的
 let collapsed = computed(() => menuConfig.collapsed);
+let openKeys = computed(() => menuConfig.openKeys);
+let preOpenKeys = computed(() => menuConfig.preOpenKeys);
 
 watch(
-    () => state.openKeys,
+    () => openKeys,
     (_val, oldVal) => {
-      state.preOpenKeys = oldVal;
+      preOpenKeys = oldVal;
     },
 );
 
+// 根据路由组装菜单
 const getMenuRoutes: any = (routes: any[]) => {
   const menus: any[] = [];
   // 遍历路由，将meta中title为菜单的项添加到menus中
@@ -87,10 +84,19 @@ const getMenuRoutes: any = (routes: any[]) => {
 const route =  useRoute()
 const menuRoutes =  route.matched.find(item => item.name === 'layout')
 const items = getMenuRoutes(menuRoutes?.children)
+
+// 路由跳转
 const router = useRouter()
 const menuClick = (e:any) => {
   router.push({name: e.key})
 }
+
+
+onMounted(() => {
+  if (menuConfig.selectedKeys?.[0]) {
+    menuClick({key: menuConfig.selectedKeys[0]})
+  }
+})
 </script>
 <style scoped lang="less">
 

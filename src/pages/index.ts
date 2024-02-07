@@ -10,6 +10,7 @@ import oneDrive from "@/pages/other/oneDrive.vue"
 import butterfly from "@/pages/front/plugins/butterfly/butterfly.vue";
 import home from "@/pages/home.vue";
 import gpt from "@/pages/other/gpt.vue";
+import piniaPersisted from "@/pages/front/plugins/piniaPersisted.vue";
 
 
 const routes = [
@@ -137,6 +138,15 @@ const routes = [
                         },
                         title: "Butterfly",
                         component: butterfly
+                    },
+                    {
+                        path: '/piniaPersisted',
+                        name: 'piniaPersisted',
+                        meta: {
+                            title: 'Pinia持久化存储'
+                        },
+                        title: "Pinia持久化存储",
+                        component: piniaPersisted
                     },
                 ]
             },

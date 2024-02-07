@@ -10,6 +10,10 @@ export const useMenuConfigStore = defineStore('menuConfig', () => {
     // 主题色
     const theme = ref('light')
 
+    const selectedKeys = ref(['home'])
+    const openKeys = ref([])
+    const preOpenKeys = ref([])
+
     // 切换菜单折叠
     const  toggleCollapsed = () => {
         collapsed.value = !collapsed.value
@@ -18,6 +22,10 @@ export const useMenuConfigStore = defineStore('menuConfig', () => {
     return {
         collapsed,
         toggleCollapsed,
-        theme
+        theme,
+        selectedKeys,
+        preOpenKeys,
+        openKeys
     }
-})
+}, {persist: true})
+
