@@ -1,18 +1,17 @@
 .beautifyScrollbar{
-  scrollbar-width: thin;
+  scrollbar-width: auto;
 }
 .beautifyScrollbar::-webkit-scrollbar {
-  width: 2px;
-  height: 2px;
+  width: 4px;
+  height: 4px;
   background-color: transparent;
 }
 .beautifyScrollbar::-webkit-scrollbar-thumb {
-  border-radius: 1px;
-  background-color: #cfd6dd;
+  background-color: rgba(189, 189, 189, 0.46);
 }
 
 .beautifyScrollbar::-webkit-scrollbar-thumb:hover {
-  border-radius: 1px;
-  -webkit-box-shadow: inset 0 0 1px 1px rgba(102, 102, 102, 0.2);
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 0 2px 2px rgba(102, 102, 102, 0.2);
   background: rgba(102, 102, 102, 0.4);
 }
