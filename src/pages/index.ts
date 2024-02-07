@@ -1,4 +1,4 @@
-import pages from "@/pages/pages.vue";
+import pages from "@/pages/indexPages/pages.vue";
 import git from "@/pages/envs/git.vue";
 import nodejs from  "@/pages/envs/nodejs.vue";
 import vueJs  from  "@/pages/front/technical/vueJs.vue";
