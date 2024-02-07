@@ -90,18 +90,12 @@ const routes = [
                     {
                         path: '/vueJs',
                         name: 'vueJs',
-                        meta: {
-                            title: 'Vue.js'
-                        },
                         title: "Vue.js",
                         component: vueJs
                     },
                     {
                         path: '/typeScript',
                         name: 'typeScript',
-                        meta: {
-                            title: 'TypeScript'
-                        },
                         title: "TypeScript",
                         component: typeScript
                     },
