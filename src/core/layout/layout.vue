@@ -38,16 +38,18 @@ import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   HomeOutlined,
-  FolderOpenOutlined
+  FolderOpenOutlined,
+  BulbOutlined
 } from '@ant-design/icons-vue';
 
 const icons: { [key: string]: FunctionalComponent; } = {
   FolderOpenOutlined,
-  HomeOutlined
+  HomeOutlined,
+  BulbOutlined
 }
 
 const state = reactive({
-  selectedKeys: ['home'],
+  selectedKeys: ['gpt'],
   openKeys: [],
   preOpenKeys: [],
 });

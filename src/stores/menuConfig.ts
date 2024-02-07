@@ -6,7 +6,7 @@ import { defineStore } from 'pinia'
  */
 export const useMenuConfigStore = defineStore('menuConfig', () => {
     // 菜单是否折叠
-    const collapsed = ref(false)
+    const collapsed = ref(true)
     // 主题色
     const theme = ref('light')
 

@@ -9,12 +9,13 @@ import vMdEditor from "@/pages/front/plugins/vMdEditor/vMdEditor.vue";
 import oneDrive from "@/pages/other/oneDrive.vue"
 import butterfly from "@/pages/front/plugins/butterfly/butterfly.vue";
 import home from "@/pages/home.vue";
+import gpt from "@/pages/other/gpt.vue";
 
 
 const routes = [
     {
         path: '/',
-        redirect: 'home'
+        redirect: 'gpt'
     },
     {
         path: '/home',
@@ -161,6 +162,16 @@ const routes = [
                 component: oneDrive
             },
         ]
+    },
+    {
+        path: '/gpt',
+        name: 'gpt',
+        title: 'GPT',
+        meta: {
+            title: 'GPT',
+            icon: 'BulbOutlined'
+        },
+        component: gpt,
     },
 ]
 
