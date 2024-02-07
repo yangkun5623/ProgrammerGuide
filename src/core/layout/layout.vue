@@ -22,7 +22,7 @@
         <MenuFoldOutlined v-else />
       </a-button>
     </div>
-    <div class="content">
+    <div class="content beautifyScrollbar">
       <RouterView/>
     </div>
   </div>
@@ -89,7 +89,6 @@ const router = useRouter()
 const menuClick = (e:any) => {
   router.push({name: e.key})
 }
-
 </script>
 <style scoped lang="less">
 
