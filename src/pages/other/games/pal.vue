@@ -2,7 +2,7 @@
 import {inject, ref} from "vue";
 const previewData = ref('')
 const syncLoadFile: any = inject('syncLoadFile')
-syncLoadFile('/md/OneDrive同步自定义目录.md')
+syncLoadFile('/md/幻兽帕鲁.md')
     .then((text: string)=> {
       previewData.value = text
     })

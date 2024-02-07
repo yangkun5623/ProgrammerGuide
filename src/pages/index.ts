@@ -11,6 +11,7 @@ import butterfly from "@/pages/front/plugins/butterfly/butterfly.vue";
 import home from "@/pages/home.vue";
 import gpt from "@/pages/other/gpt.vue";
 import piniaPersisted from "@/pages/front/plugins/piniaPersisted.vue";
+import pal from "@/pages/other/games/pal.vue";
 
 
 const routes = [
@@ -162,6 +163,27 @@ const routes = [
         redirect: '/oneDrive',
         component: pages,
         children: [
+            {
+                path: '/games',
+                name: 'games',
+                title: '游戏',
+                meta: {
+                    title: '游戏',
+                },
+                component: pages,
+                redirect: '/git',
+                children: [
+                    {
+                        path: '/pal',
+                        name: 'pal',
+                        meta: {
+                            title: '幻兽帕鲁'
+                        },
+                        title: "幻兽帕鲁",
+                        component: pal
+                    },
+                ]
+            },
             {
                 path: '/onedrive',
                 name: 'onedrive',
