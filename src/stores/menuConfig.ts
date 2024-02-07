@@ -17,6 +17,11 @@ export const useMenuConfigStore = defineStore('menuConfig', () => {
     // 切换菜单折叠
     const  toggleCollapsed = () => {
         collapsed.value = !collapsed.value
+        if (collapsed.value) {
+            preOpenKeys.value = openKeys.value;
+        } else {
+            openKeys.value = preOpenKeys.value;
+        }
     }
 
     return {

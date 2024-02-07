@@ -7,7 +7,7 @@
       </div>
       <div class="menu beautifyScrollbar">
         <a-menu
-            v-model:openKeys="menuConfig.openKeys"
+            v-model:openKeys=" menuConfig.openKeys"
             v-model:selectedKeys="menuConfig.selectedKeys"
             mode="inline"
             style="border: none;width: 100%"
@@ -49,17 +49,7 @@ const icons: { [key: string]: FunctionalComponent; } = {
 }
 
 const menuConfig = useMenuConfigStore()
-// 如果直接使用menuConfig.collapsed来展示值的话是不需要定义成computed计算属性的
 let collapsed = computed(() => menuConfig.collapsed);
-let openKeys = computed(() => menuConfig.openKeys);
-let preOpenKeys = computed(() => menuConfig.preOpenKeys);
-
-watch(
-    () => openKeys,
-    (_val, oldVal) => {
-      preOpenKeys = oldVal;
-    },
-);
 
 // 根据路由组装菜单
 const getMenuRoutes: any = (routes: any[]) => {
