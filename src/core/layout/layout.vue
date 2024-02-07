@@ -31,19 +31,27 @@
 import {reactive, watch, h, computed} from 'vue';
 import {useMenuConfigStore} from "@/stores/menuConfig";
 import {useRoute, useRouter} from "vue-router";
-import {FolderOpenOutlined} from  "@ant-design/icons-vue";
 import type { ItemType } from 'ant-design-vue'
-
+import type { FunctionalComponent } from 'vue'
 
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
+  HomeOutlined,
+  FolderOpenOutlined
 } from '@ant-design/icons-vue';
+
+const icons: { [key: string]: FunctionalComponent; } = {
+  FolderOpenOutlined,
+  HomeOutlined
+}
+
 const state = reactive({
   selectedKeys: ['home'],
   openKeys: [],
   preOpenKeys: [],
 });
+
 const menuConfig = useMenuConfigStore()
 // 如果直接使用menuConfig.collapsed来展示值的话是不需要定义成computed计算属性的
 let collapsed = computed(() => menuConfig.collapsed);
@@ -60,21 +68,16 @@ const getMenuRoutes: any = (routes: any[]) => {
   // 遍历路由，将meta中title为菜单的项添加到menus中
   routes.forEach(e => {
     if (e.meta) {
-      if (e.children) {
-        const menu:ItemType = {
-          key: e.name,
-          label: e.meta.title,
-          icon: () => h(FolderOpenOutlined),
-          children: getMenuRoutes(e.children)
-        }
-        menus.push(menu)
-      } else {
-        const menu:ItemType = {
-          key: e.name,
-          label: e.meta.title,
-        }
-        menus.push(menu)
+      const menu:ItemType = {
+        key: e.name,
+        label: e.meta.title,
+        icon: e.meta.icon ? h(icons[e.meta.icon]) : undefined,
+        children: e.children ? getMenuRoutes(e.children) : undefined
       }
+      if (e.children && !e.meta.icon) {
+        menu.icon = () => h(FolderOpenOutlined)
+      }
+      menus.push(menu)
     }
   })
   return menus;

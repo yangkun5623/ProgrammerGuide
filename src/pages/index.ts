@@ -22,6 +22,7 @@ const routes = [
         title: '主页',
         meta: {
             title: '主页',
+            icon: 'HomeOutlined'
         },
         component: home,
     },
