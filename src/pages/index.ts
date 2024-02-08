@@ -5,7 +5,7 @@ import vueJs  from  "@/pages/front/technical/vueJs.vue";
 import typeScript  from  "@/pages/front/technical/typeScript.vue";
 import pinia  from  "@/pages/front/technical/pinia.vue";
 import nuxtJs  from  "@/pages/front/technical/nuxtJs.vue";
-import vMdEditor from "@/pages/front/plugins/vMdEditor/vMdEditor.vue";
+import vMdEditor from "@/pages/front/plugins/vMdEditor.vue";
 import oneDrive from "@/pages/other/oneDrive.vue"
 import butterfly from "@/pages/front/plugins/butterfly/butterfly.vue";
 import home from "@/pages/home.vue";
