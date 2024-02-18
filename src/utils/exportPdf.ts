@@ -2,7 +2,7 @@ import html2canvas from "html2canvas";
 import * as jspdf from "jspdf";
 
 
-export const htmlToPDF = async (pdfDom: HTMLElement, title?: string | symbol, bgColor = "#fff") => {
+export const htmlToPDF = async (pdfDom: HTMLElement, title?: string, bgColor = "#fff") => {
     const A4Width = 595.28;
     const A4Height = 841.89;
     const canvas = await html2canvas(pdfDom, {
