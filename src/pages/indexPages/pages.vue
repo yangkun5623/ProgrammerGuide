@@ -2,10 +2,9 @@
 import { VerticalAlignBottomOutlined } from '@ant-design/icons-vue'
 import { ref} from "vue";
 import {htmlToPDF} from "@/utils/exportPdf";
-import {useRoute} from "vue-router";
 const page = ref()
 const exportPdf = () => {
-  htmlToPDF(page.value.$el, useRoute().name || '导出文档'+ new Date().getDate())
+  htmlToPDF(page.value.$el,  '导出文档'+ new Date().getDate())
 }
 </script>
 
