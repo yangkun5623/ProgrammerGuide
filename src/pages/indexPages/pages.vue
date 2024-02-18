@@ -1,19 +1,24 @@
 <script setup lang="ts">
-import {onMounted, ref} from "vue";
+import { VerticalAlignBottomOutlined } from '@ant-design/icons-vue'
+import { ref} from "vue";
 import {htmlToPDF} from "@/utils/exportPdf";
+import {useRoute} from "vue-router";
 const page = ref()
-onMounted(() => {
-  setTimeout(() => {
-
-
-    console.log('page', page.value)
-    htmlToPDF(page.value.$el, '测试')
-  }, 1000)
-})
+const exportPdf = () => {
+  htmlToPDF(page.value.$el, useRoute().name || '导出文档'+ new Date().getDate())
+}
 </script>
 
 <template>
     <RouterView ref="page"/>
+    <a-float-button-group shape="square"  >
+
+    <a-float-button @click="exportPdf">
+      <template #icon>
+        <VerticalAlignBottomOutlined />
+      </template>
+    </a-float-button>
+  </a-float-button-group>
 </template>
 
 <style scoped lang="less">

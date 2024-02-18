@@ -28,6 +28,7 @@ const newValue = computed({
       :disabled-menus="[]"
       v-model="newValue"
       :height="height"></v-md-editor>
+
 </template>
 
 <style scoped>

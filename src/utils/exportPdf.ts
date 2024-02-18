@@ -2,26 +2,24 @@ import html2canvas from "html2canvas";
 import * as jspdf from "jspdf";
 
 
-export const htmlToPDF = async (pdfDom: HTMLElement, title: string = "标题", bgColor = "#fff") => {
-    pdfDom.style.padding = '0 10px !important'
+export const htmlToPDF = async (pdfDom: HTMLElement, title?: string | symbol, bgColor = "#fff") => {
     const A4Width = 595.28;
     const A4Height = 841.89;
-    let canvas = await html2canvas(pdfDom, {
+    const canvas = await html2canvas(pdfDom, {
         scale: 2,
         useCORS: true,
         backgroundColor: bgColor,
     });
-    let pageHeight = (canvas.width / A4Width) * A4Height;
+    const pageHeight = (canvas.width / A4Width) * A4Height;
     let leftHeight = canvas.height;
     let position = 0;
-    let imgWidth = A4Width;
-    let imgHeight = (A4Width / canvas.width) * canvas.height;
+    const imgWidth = A4Width;
+    const imgHeight = (A4Width / canvas.width) * canvas.height - 20;
     /*
        根据自身业务需求  是否在此处键入下方水印代码
       */
-    let pageData = canvas.toDataURL("image/jpeg", 1.0);
-    console.log('pageData', pageData)
-    let PDF = new jspdf("p", 'pt', 'a4');
+    const pageData = canvas.toDataURL("image/jpeg", 1.0);
+    const PDF = new jspdf.jsPDF("p", 'pt', 'a4');
     if (leftHeight < pageHeight) {
         PDF.addImage(pageData, "JPEG", 0, 0, imgWidth, imgHeight);
     } else {
