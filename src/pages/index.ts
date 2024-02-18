@@ -1,4 +1,5 @@
 import pages from "@/pages/indexPages/pages.vue";
+import commonRouter from "@/pages/indexPages/commonRouter.vue";
 import git from "@/pages/envs/git.vue";
 import nodejs from  "@/pages/envs/nodejs.vue";
 import vueJs  from  "@/pages/front/technical/vueJs.vue";
@@ -66,7 +67,7 @@ const routes = [
         meta: {
             title: '前端'
         },
-        component: pages,
+        component: commonRouter,
         redirect: '/vueJs',
         children: [
             {
@@ -155,7 +156,7 @@ const routes = [
             title: '其他'
         },
         redirect: '/oneDrive',
-        component: pages,
+        component: commonRouter,
         children: [
             {
                 path: '/games',
