@@ -4,7 +4,6 @@ import {provide, ref} from "vue";
 import zhCN from 'ant-design-vue/es/locale/zh_CN';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
-import {syncLoadFile} from "@/utils/utils";
 dayjs.locale('zh-cn');
 
 const theme = ref({
@@ -20,7 +19,7 @@ const getPopupContainer = (el: any, dialogContext: any) => {
     return document.body;
   }
 }
-provide('syncLoadFile', syncLoadFile)
+
 </script>
 
 <template>

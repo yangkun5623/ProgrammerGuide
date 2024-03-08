@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import {inject, ref} from "vue";
-const previewData = ref('')
-const syncLoadFile: any = inject('syncLoadFile')
-syncLoadFile('/md/Pinia.md')
-    .then((text: string)=> {
-      previewData.value = text
-    })
+import {useLoadFile} from "@/utils/utils";
+import {ref} from "vue";
+const previewData = ref()
+useLoadFile('/md/Pinia.md').then(e => {
+  previewData.value = e
+})
 </script>
 
 <template>

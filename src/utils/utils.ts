@@ -1,16 +1,14 @@
-const syncLoadFile: (path: string) => Promise<unknown> = (path:string) => {
-    return new Promise((resolve, reject) => {
-        fetch(window?.location?.origin + path)
-            .then(vMdEditorRead =>(vMdEditorRead as Response).text())
-            .then((e) => {
-                resolve(e)
-            })
-            .catch((s) => {
-                reject(s)
-            })
-    })
+import { ref} from "vue";
+const  useLoadFile = async (path:string) => {
+    const previewData = ref('')
+    await fetch(window?.location?.origin + path)
+        .then(vMdEditorRead =>(vMdEditorRead as Response).text())
+        .then((e) => {
+            previewData.value = e
+        })
+    return previewData
 }
 
 export {
-    syncLoadFile
+    useLoadFile
 }
