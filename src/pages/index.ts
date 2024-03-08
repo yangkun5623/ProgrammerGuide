@@ -13,6 +13,7 @@ import home from "@/pages/home.vue";
 import gpt from "@/pages/other/gpt.vue";
 import piniaPersisted from "@/pages/front/plugins/piniaPersisted.vue";
 import pal from "@/pages/other/games/pal.vue";
+import canvas from "@/pages/front/technical/canvas.vue";
 
 
 const routes = [
@@ -79,6 +80,15 @@ const routes = [
                 title: "Technical",
                 component: pages,
                 children: [
+                    {
+                        path: '/canvas',
+                        name: 'canvas',
+                        meta: {
+                            title: 'Canvas'
+                        },
+                        title: "Canvas",
+                        component: canvas
+                    },
                     {
                         path: '/pinia',
                         name: 'pinia',
