@@ -21,7 +21,7 @@ const draw = () => {
   ctx.drawImage(img, 0, 0)
 }
 onMounted(() => {
-  draw()
+  // draw()
 })
 </script>
 
