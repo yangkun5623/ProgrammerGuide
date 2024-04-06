@@ -22,14 +22,14 @@ onMounted(() => {
 </script>
 
 <template>
-<van-swipe height="250" lazy-render>
-  <van-swipe-item v-for="image in top" :key="image" style="text-align: center;">
-    <img :src="image" height="250"/>
+<van-swipe style="height: 50%;" lazy-render>
+  <van-swipe-item v-for="image in top" :key="image"  style="text-align: center;">
+    <img :src="image" height="100%"/>
   </van-swipe-item>
 </van-swipe>
-<van-swipe height="250" lazy-render>
+<van-swipe style="height: 50%;" lazy-render>
   <van-swipe-item v-for="image in bottom" :key="image" style="text-align: center;">
-    <img :src="image" height="250"/>
+    <img :src="image" height="100%"/>
   </van-swipe-item>
 </van-swipe>
 </template>
@@ -38,7 +38,7 @@ onMounted(() => {
   .my-swipe .van-swipe-item {
     color: #fff;
     font-size: 20px;
-    line-height: 250px;
+    line-height: 50%;
     text-align: center;
   }
 </style>
