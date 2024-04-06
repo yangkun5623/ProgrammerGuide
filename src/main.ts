@@ -5,9 +5,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
-
 const app = createApp(App)
-
+import { Swipe, SwipeItem } from 'vant';
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/reset.css';
 import router from './core/route'
@@ -24,6 +23,8 @@ app.use(Antd)
 app.use(router)
 app.use(plugins)
 app.use(pinia)
+app.use(Swipe)
+app.use(SwipeItem)
 
 // 添加全局方法
 

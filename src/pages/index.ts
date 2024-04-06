@@ -14,6 +14,7 @@ import gpt from "@/pages/other/gpt.vue";
 import piniaPersisted from "@/pages/front/plugins/piniaPersisted.vue";
 import pal from "@/pages/other/games/pal.vue";
 import canvas from "@/pages/front/technical/canvas.vue";
+import yfVue from "./other/yf.vue";
 
 
 const routes = [
@@ -197,6 +198,15 @@ const routes = [
                 },
                 title: "OneDrive同步自定义目录",
                 component: oneDrive
+            },
+            {
+                path: '/yf',
+                name: 'yf',
+                meta: {
+                    title: 'yf'
+                },
+                title: "yf",
+                component: yfVue
             },
         ]
     },
