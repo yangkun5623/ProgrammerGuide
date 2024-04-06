@@ -9,16 +9,16 @@ const draw = () => {
     return
   }
   const ctx = canvas.getContext('2d');
-  ctx.fillStyle = "red";
-  ctx.fillRect(10,10,55,50)
-  ctx.fillStyle = 'blue'
-  ctx.fillRect(100,100,55,50)
+  ctx!.fillStyle = "red";
+  ctx!.fillRect(10,10,55,50)
+  ctx!.fillStyle = 'blue'
+  ctx!.fillRect(100,100,55,50)
 
-  ctx.strokeRect(200,200,55,50)
+  ctx!.strokeRect(200,200,55,50)
 
   const img = new Image()
   img.src = '@/assets/avatar.jpg'
-  ctx.drawImage(img, 0, 0)
+  ctx!.drawImage(img, 0, 0)
 }
 onMounted(() => {
   // draw()
