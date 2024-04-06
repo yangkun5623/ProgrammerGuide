@@ -9,14 +9,15 @@ const bottom:any = reactive([])
 onMounted(() => {
     ['QQ20240406223246.jpg',
     'QQ20240406225738.jpg'].forEach((e) => {
-        top.push(new URL('../../assets/yf/'+e, import.meta.url).href)
+        top.push(new URL('./yf/'+e, window?.location?.origin).href)
     });
 
     ['QQ20240406223241.jpg','QQ20240406225752.jpg'].forEach((e) => {
-        bottom.push(new URL('../../assets/yf/'+e, import.meta.url).href)
+        bottom.push(new URL('./yf/'+e, window?.location?.origin).href)
     });
 
-
+    console.log('top', top);
+    
 })
 
 </script>
