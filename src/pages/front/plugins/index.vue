@@ -24,6 +24,9 @@ watch(activeKey, val => {
         <a-typography-link href="https://g6.antv.vision/manual/introduction" target="_blank">
           Antv/G6
         </a-typography-link>
+        <a-typography-link href="https://site.logic-flow.cn/" target="_blank">
+          Logicflow
+        </a-typography-link>
       </a-space>
     </a-collapse-panel>
   </a-collapse>
