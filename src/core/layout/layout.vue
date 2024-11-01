@@ -123,7 +123,7 @@ onMounted(() => {
 
   .content{
     flex: 1;
-    padding: 10px;
+    padding: 6px;
     background: #F1F2F6;
     width: 100%;
     height: 100%;
