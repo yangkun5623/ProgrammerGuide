@@ -3,7 +3,6 @@ import vMdEditor from "@/pages/front/plugins/vMdEditor.vue";
 import Index from "@/pages/front/plugins/index.vue";
 import butterfly from "@/pages/front/plugins/butterfly/butterfly.vue";
 import piniaPersisted from "@/pages/front/plugins/piniaPersisted.vue";
-import gridLayout from '@/pages/front/plugins/grid-layout.vue'
 
 
 const routes = [
@@ -52,15 +51,6 @@ const routes = [
                 },
                 title: "Pinia持久化存储",
                 component: piniaPersisted
-            },
-            {
-                path: '/gridLayout',
-                name: 'gridLayout',
-                meta: {
-                    title: '栅格布局'
-                },
-                title: "gridLayout",
-                component: gridLayout
             },
         ]
     },
