@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import {ref} from "vue";
-const columns = ref([
+const columns: any = ref([
   {
     title: 'AUTHOR',
     dataIndex: 'author',
@@ -27,8 +27,8 @@ const columns = ref([
     width: 50,
   },
 ])
-const authorsHeaderBtns = ref('')
-const data = ref([
+const authorsHeaderBtns: any = ref('')
+const data:any = ref([
   {
     key: '1',
     author: {

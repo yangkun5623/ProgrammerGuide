@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import {onMounted, } from "vue";
-const chartId = 'chart' + getUUID()
-const height = 200
+const chartId:string = 'chart' + getUUID()
 // 引入 echarts 核心模块，核心模块提供了 echarts 使用必须要的接口。
 import * as echarts from 'echarts/core';
 // 引入柱状图图表，图表后缀都为 Chart
@@ -32,14 +31,14 @@ echarts.use([
   UniversalTransition,
   CanvasRenderer
 ]);
-const props = defineProps({
+const props:any = defineProps({
   option: {
     type: Object
   }
 })
 
 onMounted(() => {
-  const char = echarts.init(document.getElementById(chartId))
+  const char:any = echarts.init(document.getElementById(chartId))
   char.setOption( props.option)
 })
 </script>

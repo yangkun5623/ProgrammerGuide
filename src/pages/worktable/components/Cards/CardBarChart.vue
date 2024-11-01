@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import {ref} from "vue";
 import Echart from "@/components/echarts/echart.vue";
-const option = ref({
+const option:any = ref({
   xAxis: {
     type: 'category',
     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
