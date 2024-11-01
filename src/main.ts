@@ -12,6 +12,7 @@ import 'ant-design-vue/dist/reset.css';
 import router from './core/route'
 import plugins from "@/components";
 import MdEditor from "@/components/mdEditor";
+import gridLayout from 'vue-grid-layout'
 
 const pinia = createPinia()
 
@@ -25,6 +26,7 @@ app.use(plugins)
 app.use(pinia)
 app.use(Swipe)
 app.use(SwipeItem)
+app.use(gridLayout)
 
 // 添加全局方法
 

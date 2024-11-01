@@ -6,16 +6,13 @@ import vueJs  from  "@/pages/front/technical/vueJs.vue";
 import typeScript  from  "@/pages/front/technical/typeScript.vue";
 import pinia  from  "@/pages/front/technical/pinia.vue";
 import nuxtJs  from  "@/pages/front/technical/nuxtJs.vue";
-import vMdEditor from "@/pages/front/plugins/vMdEditor.vue";
-import Index from "@/pages/front/plugins/index.vue";
 import oneDrive from "@/pages/other/oneDrive.vue"
-import butterfly from "@/pages/front/plugins/butterfly/butterfly.vue";
 import home from "@/pages/home.vue";
 import gpt from "@/pages/other/gpt.vue";
-import piniaPersisted from "@/pages/front/plugins/piniaPersisted.vue";
 import pal from "@/pages/other/games/pal.vue";
 import canvas from "@/pages/front/technical/canvas.vue";
 import yfVue from "./other/yf.vue";
+import plugins from './front/plugins/routes'
 
 
 const routes = [
@@ -120,54 +117,7 @@ const routes = [
                     },
                 ]
             },
-            {
-                path: '/plugins',
-                name: 'plugins',
-                meta: {
-                    title: 'Plugins'
-                },
-                title: "plugins",
-                component: pages,
-                redirect: '/index',
-                children: [
-                    {
-                        path: '/index',
-                        name: 'index',
-                        meta: {
-                            title: 'index'
-                        },
-                        title: "index",
-                        component: Index
-                    },
-                    {
-                        path: '/vMdEditor',
-                        name: 'vMdEditor',
-                        meta: {
-                            title: 'vMdEditor'
-                        },
-                        title: "vMdEditor",
-                        component: vMdEditor
-                    },
-                    {
-                        path: '/butterfly',
-                        name: 'butterfly',
-                        meta: {
-                            title: 'Butterfly'
-                        },
-                        title: "Butterfly",
-                        component: butterfly
-                    },
-                    {
-                        path: '/piniaPersisted',
-                        name: 'piniaPersisted',
-                        meta: {
-                            title: 'Pinia持久化存储'
-                        },
-                        title: "Pinia持久化存储",
-                        component: piniaPersisted
-                    },
-                ]
-            },
+            ...plugins,
         ],
     },
     {
