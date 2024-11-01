@@ -159,16 +159,7 @@ const routes = [
                 },
                 title: "OneDrive同步自定义目录",
                 component: oneDrive
-            },
-            {
-                path: '/yf',
-                name: 'yf',
-                meta: {
-                    title: 'yf'
-                },
-                title: "yf",
-                component: yfVue
-            },
+            }
         ]
     },
     {

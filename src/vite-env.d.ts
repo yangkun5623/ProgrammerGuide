@@ -9,4 +9,5 @@ declare module '*.tiff'
 
 declare module 'butterfly-dag/plugins/panel/dist'
 declare module '@kangc/v-md-editor'
+declare module 'vue-grid-layout'
 declare module '*.js'
