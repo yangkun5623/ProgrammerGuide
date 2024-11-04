@@ -2,6 +2,7 @@ import {createMemoryHistory, createRouter, createWebHistory} from 'vue-router'
 import Layout from '../layout/layout.vue'
 import Login from '../login/login.vue'
 import routes from "@/pages";
+import { allUser } from '@/core/common/js/permission'
 const router = createRouter({
   history: createMemoryHistory(),
   routes: [
@@ -22,11 +23,17 @@ const router = createRouter({
     }
   ]
 })
-// router.beforeEach((to, from, next) =>{
-//   console.log('to', to)
-//   console.log('from', from)
-//   console.log('next', next())
-// })
+
+router.beforeEach((to, from, next) =>{
+  const loginCode:string | null = localStorage.getItem('loginCode')
+  if (!allUser.includes(typeof loginCode === 'string' ? loginCode :'') &&  to.name !== 'login') {
+    next({
+      name: 'login',
+    })
+  } else {
+    next()
+  }
+})
 
 
 

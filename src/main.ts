@@ -19,11 +19,10 @@ const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)
 
 app.component('MdEditor', MdEditor)
-
+app.use(pinia)
 app.use(Antd)
 app.use(router)
 app.use(plugins)
-app.use(pinia)
 app.use(Swipe)
 app.use(SwipeItem)
 app.use(gridLayout)

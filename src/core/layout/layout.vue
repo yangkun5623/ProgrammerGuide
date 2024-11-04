@@ -33,7 +33,7 @@ import {useMenuConfigStore} from "@/stores/menuConfig";
 import {useRoute, useRouter} from "vue-router";
 import type { ItemType } from 'ant-design-vue'
 import type { FunctionalComponent } from 'vue'
-
+import { permission } from '@/core/common/js/permission'
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -50,6 +50,7 @@ const icons: { [key: string]: FunctionalComponent; } = {
 
 const menuConfig = useMenuConfigStore()
 let collapsed = computed(() => menuConfig.collapsed);
+const loginCode = localStorage.getItem('loginCode');
 
 // 根据路由组装菜单
 const getMenuRoutes: any = (routes: any[]) => {
@@ -57,16 +58,18 @@ const getMenuRoutes: any = (routes: any[]) => {
   // 遍历路由，将meta中title为菜单的项添加到menus中
   routes.forEach(e => {
     if (e.meta) {
-      const menu:ItemType = {
-        key: e.name,
-        label: e.meta.title,
-        icon: e.meta.icon ? h(icons[e.meta.icon]) : undefined,
-        children: e.children ? getMenuRoutes(e.children) : undefined
+      if (!e.meta.permission || permission[e.meta.permission].includes(loginCode)) {
+        const menu:ItemType = {
+          key: e.name,
+          label: e.meta.title,
+          icon: e.meta.icon ? h(icons[e.meta.icon]) : undefined,
+          children: e.children ? getMenuRoutes(e.children) : undefined
+        }
+        if (e.children && !e.meta.icon) {
+          menu.icon = () => h(FolderOpenOutlined)
+        }
+        menus.push(menu)
       }
-      if (e.children && !e.meta.icon) {
-        menu.icon = () => h(FolderOpenOutlined)
-      }
-      menus.push(menu)
     }
   })
   return menus;

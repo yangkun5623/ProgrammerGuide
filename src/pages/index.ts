@@ -11,7 +11,6 @@ import home from "@/pages/home.vue";
 import gpt from "@/pages/other/gpt.vue";
 import pal from "@/pages/other/games/pal.vue";
 import canvas from "@/pages/front/technical/canvas.vue";
-import yfVue from "./other/yf.vue";
 import plugins from './front/plugins/routes'
 
 
@@ -35,6 +34,7 @@ const routes = [
         name: 'env',
         title: '环境',
         meta: {
+            permission: 'admin',
             title: '环境',
         },
         component: pages,
@@ -65,6 +65,7 @@ const routes = [
         name: 'Layout',
         title: '前端',
         meta: {
+            permission: 'admin',
             title: '前端'
         },
         component: commonRouter,
@@ -125,6 +126,7 @@ const routes = [
         name: 'other',
         title: '其他',
         meta: {
+            permission: 'admin',
             title: '其他'
         },
         redirect: '/oneDrive',

@@ -20,6 +20,7 @@
     "ant-design-vue": "^4.0.8",
     "butterfly-dag": "^4.3.28",
     "copy-webpack-plugin": "^11.0.0",
+    "crypto-js": "^4.2.0",
     "dayjs": "^1.11.10",
     "echarts": "^5.5.1",
     "html2canvas": "^1.4.1",

@@ -4,11 +4,10 @@ import router from "@/core/route/index";
 
 const value = ref('')
 const onSearch = () => {
-  if (value.value === 'yk961102') {
-    router.push({
-      name: 'layout'
-    })
-  }
+  localStorage.setItem('loginCode', value.value)
+  router.push({
+    name: 'layout'
+  })
 }
 </script>
 
@@ -50,7 +49,7 @@ const onSearch = () => {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 140px;
+  height: 120px;
   font-weight: bold;
   font-size: 24px;
 }
