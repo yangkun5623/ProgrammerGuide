@@ -1,12 +1,12 @@
-const admin = ['yk961102']
-const user = ['logincode']
+const admin:string[] = ['yk961102']
+const user:string[] = ['logincode']
 
-const allUser = [
+const allUser:string[] = [
   ...user,
   ...admin
 ]
 
-const permission = {
+const permission: any = {
   user,
   admin,
   allUser
