@@ -3,6 +3,7 @@ import Layout from '../layout/layout.vue'
 import Login from '../login/login.vue'
 import routes from "@/pages";
 import { allUser } from '@/core/common/js/permission'
+import { permission } from '@/core/common/js/permission'
 const router = createRouter({
   history: createMemoryHistory(),
   routes: [
@@ -25,13 +26,17 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) =>{
-  const loginCode:string | null = localStorage.getItem('loginCode')
-  if (!allUser.includes(typeof loginCode === 'string' ? loginCode :'') &&  to.name !== 'login') {
-    next({
-      name: 'login',
-    })
-  } else {
+  if (to.name === 'login') {
     next()
+  }
+  const loginCode:string | null = localStorage.getItem('loginCode')
+  const metaPermission:any = to.meta.permission
+  if (metaPermission && permission[metaPermission].includes(loginCode)) {
+    next()
+  } else if (allUser.includes(typeof loginCode === 'string' ? loginCode :'')) {
+    next()
+  } else {
+    next('/login')
   }
 })
 
