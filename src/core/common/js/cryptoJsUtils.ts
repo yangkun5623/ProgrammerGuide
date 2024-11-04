@@ -1,3 +1,6 @@
+/**
+ * 加密工具
+ */
 import CryptoJs from 'crypto-js'
 const key:string = CryptoJs.enc.Utf8.parse('qweqwe')
 const iv = CryptoJs.enc.Utf8.parse('')
