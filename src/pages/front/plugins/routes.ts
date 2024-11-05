@@ -3,6 +3,7 @@ import vMdEditor from "@/pages/front/plugins/vMdEditor.vue";
 import Index from "@/pages/front/plugins/index.vue";
 import butterfly from "@/pages/front/plugins/butterfly/butterfly.vue";
 import piniaPersisted from "@/pages/front/plugins/piniaPersisted.vue";
+import logicFlow from "@/pages/front/plugins/logicFlow/logic-flow.vue";
 
 
 const routes = [
@@ -24,6 +25,15 @@ const routes = [
                 },
                 title: "index",
                 component: Index
+            },
+            {
+                path: '/logicFlow',
+                name: 'logicFlow',
+                meta: {
+                    title: '工作流图'
+                },
+                title: "logicFlow",
+                component: logicFlow
             },
             {
                 path: '/vMdEditor',

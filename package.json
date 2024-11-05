@@ -16,6 +16,7 @@
   "dependencies": {
     "@ant-design/icons-vue": "^7.0.1",
     "@kangc/v-md-editor": "^2.3.18",
+    "@logicflow/core": "^2.0.6",
     "@types/prismjs": "^1.26.3",
     "ant-design-vue": "^4.0.8",
     "butterfly-dag": "^4.3.28",
