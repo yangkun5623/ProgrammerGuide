@@ -17,6 +17,7 @@
     "@ant-design/icons-vue": "^7.0.1",
     "@kangc/v-md-editor": "^2.3.18",
     "@logicflow/core": "^2.0.6",
+    "@types/lodash": "^4.17.13",
     "@types/prismjs": "^1.26.3",
     "ant-design-vue": "^4.0.8",
     "butterfly-dag": "^4.3.28",
@@ -25,6 +26,7 @@
     "dayjs": "^1.11.10",
     "echarts": "^5.5.1",
     "html2canvas": "^1.4.1",
+    "htmlparser2": "^9.1.0",
     "jquery": "^3.7.1",
     "jspdf": "^2.5.1",
     "less": "^4.2.0",
@@ -34,6 +36,7 @@
     "pinia-plugin-persistedstate": "^3.2.1",
     "prismjs": "^1.29.0",
     "vant": "^4.8.10",
+    "vite-plugin-svg-icons": "^2.0.1",
     "vue": "^3.3.11",
     "vue-grid-layout": "3.0.0-beta1",
     "vue-router": "^4.2.5"

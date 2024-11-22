@@ -8,6 +8,9 @@ import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { VantResolver } from '@vant/auto-import-resolver';
 
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
+import * as path from "path";
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -19,6 +22,10 @@ export default defineConfig({
     Components({
       resolvers: [VantResolver()],
     }),
+    createSvgIconsPlugin({
+      iconDirs: [path.resolve(process.cwd(), 'src/assets/icons/svgs')],
+      symbolId: 'icon-[name]'
+    })
   ],
   resolve: {
     alias: {
@@ -35,7 +42,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        
+
       }
     }
   },
