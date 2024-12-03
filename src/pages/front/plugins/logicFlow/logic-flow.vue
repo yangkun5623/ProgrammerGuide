@@ -1,10 +1,47 @@
 <script setup lang="ts">
 import { LogicFlow } from '@logicflow/core'
-import {ref} from 'vue'
-import '@logicflow/core/dist/index.css';
+import { ref } from 'vue'
+import '@logicflow/core/dist/index.css'
 import { onMounted } from 'vue'
 import cNode from './cNode'
-const data = {
+
+// 定义节点类型接口
+interface NodeData {
+  id: number
+  type: string
+  x: number
+  y: number
+  text: {
+    value: string
+    x: number
+    y: number
+  }
+}
+
+// 定义边类型接口
+interface EdgeData {
+  type: string
+  sourceNodeId: number
+  targetNodeId: number
+}
+
+// 定义图数据接口
+interface GraphData {
+  nodes: NodeData[]
+  edges: EdgeData[]
+}
+
+// 定义事件数据接口
+interface EdgeEventData {
+  data: {
+    id: string
+    type: string
+    sourceNodeId: number
+    targetNodeId: number
+  }
+}
+
+const data: GraphData = {
   // 节点
   nodes: [
     {
@@ -39,22 +76,26 @@ const data = {
   ],
 };
 
-const selectEdge:any = ref(null)
+const selectEdge = ref<EdgeEventData | null>(null)
 
 onMounted(() => {
-  const clientWidth = window.document.body.clientWidth - 72;
-  const clientHeight = window.document.body.clientHeight - 12;
-  const lf:any = new LogicFlow({
-    container: window.document.querySelector('#container'),
+  const clientWidth = window.document.body.clientWidth - 72
+  const clientHeight = window.document.body.clientHeight - 12
+  
+  const lf = new LogicFlow({
+    container: window.document.querySelector('#container') as HTMLElement,
     stopScrollGraph: true,
     stopZoomGraph: true,
     width: clientWidth,
     height: clientHeight
-  });
-  lf.register(cNode)
-  lf.on('element:click', (data, e, position) => {
   })
-  lf.on('edge:click', (data, e, position) => {
+  
+  lf.register(cNode)
+  
+  lf.on('element:click', (data: any, e: MouseEvent, position: { x: number, y: number }) => {
+  })
+  
+  lf.on('edge:click', (data: EdgeEventData, e: MouseEvent, position: { x: number, y: number }) => {
     selectEdge.value = data
   })
 
@@ -62,8 +103,10 @@ onMounted(() => {
   document.addEventListener("keydown", function(event) {
     if (event.keyCode === 46) {  // 监听Del
       console.log(selectEdge)
-      // 执行相应的代码
-      lf.deleteEdge(selectEdge.value.data.id);
+      // 添加空值检查
+      if (selectEdge.value) {
+        lf.deleteEdge(selectEdge.value.data.id);
+      }
     }
   });
 })
