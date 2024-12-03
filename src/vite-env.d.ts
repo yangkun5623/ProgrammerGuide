@@ -13,3 +13,5 @@ declare module 'vue-grid-layout'
 declare module 'crypto-js'
 declare module '@logicflow/core'
 declare module '*.js'
+declare module 'lodash'
+
