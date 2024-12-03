@@ -5,9 +5,14 @@ import '@logicflow/core/dist/index.css'
 import { onMounted } from 'vue'
 import cNode from './cNode'
 
-// 定义节点类型接口
+// 完善节点类型定义
+interface NodeProperties {
+  nodeType: 'input' | 'output'
+  icon: string
+}
+
 interface NodeData {
-  id: number
+  id: string
   type: string
   x: number
   y: number
@@ -16,30 +21,33 @@ interface NodeData {
     x: number
     y: number
   }
+  properties?: NodeProperties
 }
 
-// 定义边类型接口
+// 完善边类型定义
 interface EdgeData {
+  id: string
   type: string
-  sourceNodeId: number
-  targetNodeId: number
+  sourceNodeId: string
+  targetNodeId: string
+  properties?: Record<string, unknown>
 }
 
-// 定义图数据接口
+// 完善图数据接口
 interface GraphData {
   nodes: NodeData[]
   edges: EdgeData[]
 }
 
-// 定义事件数据接口
-interface EdgeEventData {
-  data: {
-    id: string
-    type: string
-    sourceNodeId: number
-    targetNodeId: number
-  }
+// 定义自定义节点类型
+interface CustomNode {
+  type: string
+  text: string
+  properties: NodeProperties
 }
+
+// LogicFlow 实例类型
+type LogicFlowInstance = InstanceType<typeof LogicFlow>
 
 const data: GraphData = {
   // 节点
@@ -49,9 +57,8 @@ const data: GraphData = {
   ],
 };
 
-const selectEdge:any = ref(null)
-
-const lf:any = ref(null)
+const selectEdge = ref<EdgeData | null>(null)
+const lf = ref<LogicFlowInstance | null>(null)
 
 onMounted(() => {
   const clientWidth = window.document.body.clientWidth - 472;
@@ -95,11 +102,11 @@ onMounted(() => {
     if (event.keyCode === 46) {  // 监听Del
       console.log(selectEdge)
       // 执行相应的代码
-      lf.value.deleteEdge(selectEdge.value.data.id);
+      lf.value.deleteEdge(selectEdge?.value?.data?.id);
     }
   });
 })
-const nodes: any[] = [
+const nodes: CustomNode[] = [
   {
     type: 'customNodeType',
     text: '输入',
@@ -117,9 +124,11 @@ const nodes: any[] = [
     }
   }
 ]
-const mousedown = (event, node) => {
-  lf.value.dnd.startDrag(node)
-  event.preventDefault()
+const mousedown = (event: MouseEvent, node: CustomNode): void => {
+  if (lf.value) {
+    lf.value.dnd.startDrag(node)
+    event.preventDefault()
+  }
 }
 
 </script>
