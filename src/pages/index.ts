@@ -75,7 +75,7 @@ const routes = [
                 path: '/technical',
                 name: 'technical',
                 meta: {
-                    title: 'Technical'
+                    title: '技术'
                 },
                 title: "Technical",
                 component: pages,

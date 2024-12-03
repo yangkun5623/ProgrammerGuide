@@ -11,9 +11,9 @@ const routes = [
         path: '/plugins',
         name: 'plugins',
         meta: {
-            title: 'Plugins'
+            title: '插件'
         },
-        title: "plugins",
+        title: "插件",
         component: pages,
         redirect: '/index',
         children: [
@@ -21,7 +21,7 @@ const routes = [
                 path: '/index',
                 name: 'index',
                 meta: {
-                    title: 'index'
+                    title: '开源插件集合'
                 },
                 title: "index",
                 component: Index
