@@ -61,8 +61,8 @@ const selectEdge = ref<EdgeData | null>(null)
 const lf = ref<LogicFlowInstance | null>(null)
 
 onMounted(() => {
-  const clientWidth = window.document.body.clientWidth - 472;
-  const clientHeight = window.document.body.clientHeight - 62;
+  const clientWidth: number = window.document.body.clientWidth - 472;
+  const clientHeight: number = window.document.body.clientHeight - 62;
   lf.value = new LogicFlow({
     container: window.document.querySelector('#container'),
     stopScrollGraph: true,
@@ -71,9 +71,9 @@ onMounted(() => {
     height: clientHeight,
   });
   lf.value.register(cNode)
-  lf.value.on('element:click', (data, e, position) => {
+  lf.value.on('element:click', (data: any, e: MouseEvent, position: { x: number; y: number }) => {
   })
-  lf.value.on('edge:click', (data, e, position) => {
+  lf.value.on('edge:click', (data: EdgeData, e: MouseEvent, position: { x: number; y: number }) => {
     selectEdge.value = data
   })
   lf.value.setTheme({
@@ -98,11 +98,11 @@ onMounted(() => {
     }
   })
   lf.value.render(data);
-  document.addEventListener("keydown", function(event) {
+  document.addEventListener("keydown", function(event: KeyboardEvent) {
     if (event.keyCode === 46) {  // 监听Del
       console.log(selectEdge)
       // 执行相应的代码
-      lf.value.deleteEdge(selectEdge?.value?.data?.id);
+      lf.value?.deleteEdge(selectEdge?.value?.id);
     }
   });
 })
@@ -111,7 +111,7 @@ const nodes: CustomNode[] = [
     type: 'customNodeType',
     text: '输入',
     properties: {
-      nodeType: 'input',
+      nodeType: 'input' as const,
       icon: 'input',
     }
   },
@@ -119,7 +119,7 @@ const nodes: CustomNode[] = [
     type: 'customNodeType',
     text: '输出',
     properties: {
-      nodeType: 'output',
+      nodeType: 'output' as const,
       icon: 'input',
     }
   }
