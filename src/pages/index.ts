@@ -12,6 +12,10 @@ import gpt from "@/pages/other/gpt.vue";
 import pal from "@/pages/other/games/pal.vue";
 import canvas from "@/pages/front/technical/canvas.vue";
 import plugins from './front/plugins/routes'
+import nexusBuildWin from '@/pages/envs/npm/nexus-build-win.vue'
+import npmPack from '@/pages/envs/npm/npm-pack.vue'
+import npmPublish from '@/pages/envs/npm/npm-publish.vue'
+import npmInstall from '@/pages/envs/npm/npm-install.vue'
 
 
 const routes = [
@@ -40,6 +44,52 @@ const routes = [
         component: pages,
         redirect: '/git',
         children: [
+            {
+                path: '/npm',
+                name: 'npm',
+                meta: {
+                    title: 'Npm包制作流程'
+                },
+                title: "npm",
+                component: pages,
+                children: [
+                    {
+                        path: '/nexus-build-win',
+                        name: 'nexus-build-win',
+                        meta: {
+                            title: 'nexus环境搭建win'
+                        },
+                        title: "nexus环境搭建win",
+                        component: nexusBuildWin
+                    },
+                    {
+                        path: '/npm-pack',
+                        name: 'npm-pack',
+                        meta: {
+                            title: 'npm打包流程'
+                        },
+                        title: "npm打包流程",
+                        component: npmPack
+                    },
+                    {
+                        path: '/npm-publish',
+                        name: 'npm-publish',
+                        meta: {
+                            title: 'npm包推送到库'
+                        },
+                        title: "npm包推送到库",
+                        component: npmPublish
+                    },                    {
+                        path: '/npm-install',
+                        name: 'npm-install',
+                        meta: {
+                            title: 'npm下载包'
+                        },
+                        title: "npm下载包",
+                        component: npmInstall
+                    }
+                ]
+            },
             {
                 path: '/git',
                 name: 'git',
