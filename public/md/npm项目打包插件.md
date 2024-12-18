@@ -80,24 +80,7 @@ module.exports = {
 npm pack
 ```
 
-## 发布npm包到仓库http://x.x.x.x:8081/repository/myrep
-### 登陆
-npm adduser --registry=http://x.x.x.x:8081/repository/myrep
+## 使用包
+将打包出来的.tgz文件放到项目根目录
 
-输入账号...admin  
-输入密码...xxxxxx  
-输入邮箱...xxxx@qq.com  
-
-npm publish --registry=http://x.x.x.x:8081/repository/myrep
-
-## 下载包到项目使用
-### 在根目录创建.npmrc文件
-设置仓库
-```aiignore
-registry=http://x.x.x.x:8081/repository/myrep
-```
-
-## 安装依赖
-```aiignore
-npm install my-comp
-```
+然后 npm install ./xxx.tgz
